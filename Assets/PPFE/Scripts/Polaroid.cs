@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using Oculus.Interaction;
+using UnityEngine;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Polaroid : MonoBehaviour
 {
@@ -8,9 +11,18 @@ public class Polaroid : MonoBehaviour
 
     private Camera renderCamera = null;
 
+    /*[Header("Zoom Settings")]
+    public float minFOV = 1f;
+    public float maxFOV = 60f;
+    public float zoomSpeed = 30f;
+
+    private InputDevice controllerDevice;
+    private float currentFOV;*/
+
     private void Awake()
     {
         renderCamera = GetComponentInChildren<Camera>();
+        //controllerDevice = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
     }
 
     private void Start()
@@ -69,4 +81,32 @@ public class Polaroid : MonoBehaviour
         renderCamera.enabled = false;
         screenRenderer.material.color = Color.black;
     }
+
+    /*public void Zoom()
+    {
+        // Lire la valeur du thumbstick
+        if (controllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 thumbstickValue))
+        {
+            // Utiliser l'axe Y du thumbstick pour zoomer/dézoomer
+            // thumbstickValue.y : bas (-1) à haut (1)
+            currentFOV -= thumbstickValue.y * zoomSpeed * Time.deltaTime;
+
+            // Limiter le FOV entre min et max
+            currentFOV = Mathf.Clamp(currentFOV, minFOV, maxFOV);
+
+            // Appliquer le nouveau FOV
+            renderCamera.fieldOfView = currentFOV;
+        }
+    }
+
+    private void Update()
+    {
+        Debug.Log(controllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 thumbstickValue));
+        if (renderCamera.enabled && controllerDevice.isValid)
+        {
+            Debug.Log("dans update");
+            Zoom();
+        }
+    }*/
 }
+
