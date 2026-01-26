@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
+using System.Collections.Generic;
 
 public class Polaroid : MonoBehaviour
 {
@@ -10,19 +11,20 @@ public class Polaroid : MonoBehaviour
     public Transform spawnLocation = null;
 
     private Camera renderCamera = null;
+    private InputDevice rightHandDevice;
+    private InputDevice leftHandDevice;
+    private bool deviceInitialized = false;
 
-    /*[Header("Zoom Settings")]
+    [Header("Zoom Settings")]
     public float minFOV = 1f;
     public float maxFOV = 60f;
     public float zoomSpeed = 30f;
 
-    private InputDevice controllerDevice;
-    private float currentFOV;*/
+    private float currentFOV;
 
     private void Awake()
     {
         renderCamera = GetComponentInChildren<Camera>();
-        //controllerDevice = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
     }
 
     private void Start()
@@ -30,6 +32,75 @@ public class Polaroid : MonoBehaviour
         CreateRenderTexture();
         TurnOff();
     }
+
+    private void Update()
+    {
+        if (!deviceInitialized)
+        {
+            TryInitializeControllers();
+        }
+
+        if (renderCamera.enabled)
+        {
+            Zoom();
+        }
+        //DebugThumbstickValue();
+    }
+
+    private void TryInitializeControllers()
+    {
+        List<InputDevice> devices = new List<InputDevice>();
+        InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller | InputDeviceCharacteristics.Right, devices);
+        if (devices.Count > 0)
+        {
+            rightHandDevice = devices[0];
+            Debug.Log($"Right controller found: {rightHandDevice.name}");
+        }
+
+        devices.Clear();
+        InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller | InputDeviceCharacteristics.Left, devices);
+        if (devices.Count > 0)
+        {
+            leftHandDevice = devices[0];
+            Debug.Log($"Left controller found: {leftHandDevice.name}");
+        }
+
+        deviceInitialized = rightHandDevice.isValid || leftHandDevice.isValid;
+    }
+
+    /*private void DebugThumbstickValue()
+    {
+        bool foundThumbstick = false;
+
+        if (rightHandDevice.isValid)
+        {
+            if (rightHandDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 thumbstickValue))
+            {
+                if (thumbstickValue.magnitude > 0.01f)
+                {
+                    Debug.Log($"[RIGHT] Thumbstick Value - X: {thumbstickValue.x:F3}, Y: {thumbstickValue.y:F3}");
+                }
+                foundThumbstick = true;
+            }
+        }
+
+        if (leftHandDevice.isValid)
+        {
+            if (leftHandDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 thumbstickValue))
+            {
+                if (thumbstickValue.magnitude > 0.01f)
+                {
+                    Debug.Log($"[LEFT] Thumbstick Value - X: {thumbstickValue.x:F3}, Y: {thumbstickValue.y:F3}");
+                }
+                foundThumbstick = true;
+            }
+        }
+
+        if (!foundThumbstick && !rightHandDevice.isValid && !leftHandDevice.isValid)
+        {
+            Debug.LogWarning("No valid controller device found");
+        }
+    }*/
 
     private void CreateRenderTexture()
     {
@@ -82,24 +153,23 @@ public class Polaroid : MonoBehaviour
         screenRenderer.material.color = Color.black;
     }
 
-    /*public void Zoom()
+    public void Zoom()
     {
-        // Lire la valeur du thumbstick
-        if (controllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 thumbstickValue))
+        if (rightHandDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 thumbstickValueRight))
         {
-            // Utiliser l'axe Y du thumbstick pour zoomer/dézoomer
-            // thumbstickValue.y : bas (-1) à haut (1)
-            currentFOV -= thumbstickValue.y * zoomSpeed * Time.deltaTime;
-
-            // Limiter le FOV entre min et max
+            currentFOV -= thumbstickValueRight.y * zoomSpeed * Time.deltaTime;
             currentFOV = Mathf.Clamp(currentFOV, minFOV, maxFOV);
-
-            // Appliquer le nouveau FOV
+            renderCamera.fieldOfView = currentFOV;
+        }
+        else if (leftHandDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 thumbstickValueLeft))
+        {
+            currentFOV -= thumbstickValueLeft.y * zoomSpeed * Time.deltaTime;
+            currentFOV = Mathf.Clamp(currentFOV, minFOV, maxFOV);
             renderCamera.fieldOfView = currentFOV;
         }
     }
 
-    private void Update()
+    /*private void Update()
     {
         Debug.Log(controllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 thumbstickValue));
         if (renderCamera.enabled && controllerDevice.isValid)
@@ -109,4 +179,3 @@ public class Polaroid : MonoBehaviour
         }
     }*/
 }
-
