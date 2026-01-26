@@ -16,7 +16,7 @@ public class Polaroid : MonoBehaviour
     [Header("Zoom Settings")]
     public float minFOV = 1f;
     public float maxFOV = 60f;
-    public float zoomSpeed = 10f;
+    public float zoomSpeed = 30f;
 
     private float currentFOV;
     private bool pictureAlreadyOut;
@@ -43,8 +43,6 @@ public class Polaroid : MonoBehaviour
         {
             Zoom();
         }
-
-        Debug.Log(pictureAlreadyOut);
     }
 
     private void TryInitializeControllers()
@@ -54,7 +52,7 @@ public class Polaroid : MonoBehaviour
         if (devices.Count > 0)
         {
             rightHandDevice = devices[0];
-            Debug.Log($"Right controller found: {rightHandDevice.name}");
+            //Debug.Log($"Right controller found: {rightHandDevice.name}");
         }
 
         devices.Clear();
@@ -62,7 +60,7 @@ public class Polaroid : MonoBehaviour
         if (devices.Count > 0)
         {
             leftHandDevice = devices[0];
-            Debug.Log($"Left controller found: {leftHandDevice.name}");
+            //Debug.Log($"Left controller found: {leftHandDevice.name}");
         }
 
         deviceInitialized = rightHandDevice.isValid || leftHandDevice.isValid;
@@ -82,6 +80,7 @@ public class Polaroid : MonoBehaviour
         if (!pictureAlreadyOut)
         {
             Photo newPhoto = CreatePhoto();
+            newPhoto.polaroid = this;
             SetPhotoImage(newPhoto);
             pictureAlreadyOut = true;
         }
@@ -141,7 +140,6 @@ public class Polaroid : MonoBehaviour
 
     public void SetPictureAlreadyOut(bool value)
     {
-        Debug.Log("jejejejjjejejejeeejejejej");
         pictureAlreadyOut = value;
     }
 }

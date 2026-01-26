@@ -10,7 +10,7 @@ public class Photo : MonoBehaviour
     private Collider currentCollider = null;
     private ApplyPhysics applyPhysics = null;
 
-    //public Polaroid polaroid = null;
+    public Polaroid polaroid = null;
 
     private void Awake()
     {
@@ -49,12 +49,16 @@ public class Photo : MonoBehaviour
     public void EnablePhysics()
     {
         applyPhysics.EnablePhysics();
-        SetGrabbed();
         transform.parent = null;
+    }
+
+    public void DisablePhysics()
+    {
+        applyPhysics.DisablePhysics();
     }
 
     public void SetGrabbed()
     {
-        transform.parent.gameObject.GetComponent<Polaroid>().SetPictureAlreadyOut(false);
+        polaroid.SetPictureAlreadyOut(false);
     }
 }
