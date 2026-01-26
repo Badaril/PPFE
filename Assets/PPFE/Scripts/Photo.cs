@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(ApplyPhysics))]
@@ -48,6 +49,12 @@ public class Photo : MonoBehaviour
     public void EnablePhysics()
     {
         applyPhysics.EnablePhysics();
+        SetGrabbed();
         transform.parent = null;
+    }
+
+    public void SetGrabbed()
+    {
+        transform.parent.gameObject.GetComponent<Polaroid>().SetPictureAlreadyOut(false);
     }
 }
