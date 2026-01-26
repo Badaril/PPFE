@@ -1,7 +1,5 @@
-﻿using Oculus.Interaction;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.XR;
-using UnityEngine.XR.Interaction.Toolkit;
 using System.Collections.Generic;
 
 public class Polaroid : MonoBehaviour
@@ -18,9 +16,10 @@ public class Polaroid : MonoBehaviour
     [Header("Zoom Settings")]
     public float minFOV = 1f;
     public float maxFOV = 60f;
-    public float zoomSpeed = 30f;
+    public float zoomSpeed = 10f;
 
     private float currentFOV;
+    private bool pictureAlreadyOut;
 
     private void Awake()
     {
@@ -44,7 +43,8 @@ public class Polaroid : MonoBehaviour
         {
             Zoom();
         }
-        //DebugThumbstickValue();
+
+        Debug.Log(pictureAlreadyOut);
     }
 
     private void TryInitializeControllers()
@@ -68,53 +68,23 @@ public class Polaroid : MonoBehaviour
         deviceInitialized = rightHandDevice.isValid || leftHandDevice.isValid;
     }
 
-    /*private void DebugThumbstickValue()
-    {
-        bool foundThumbstick = false;
-
-        if (rightHandDevice.isValid)
-        {
-            if (rightHandDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 thumbstickValue))
-            {
-                if (thumbstickValue.magnitude > 0.01f)
-                {
-                    Debug.Log($"[RIGHT] Thumbstick Value - X: {thumbstickValue.x:F3}, Y: {thumbstickValue.y:F3}");
-                }
-                foundThumbstick = true;
-            }
-        }
-
-        if (leftHandDevice.isValid)
-        {
-            if (leftHandDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 thumbstickValue))
-            {
-                if (thumbstickValue.magnitude > 0.01f)
-                {
-                    Debug.Log($"[LEFT] Thumbstick Value - X: {thumbstickValue.x:F3}, Y: {thumbstickValue.y:F3}");
-                }
-                foundThumbstick = true;
-            }
-        }
-
-        if (!foundThumbstick && !rightHandDevice.isValid && !leftHandDevice.isValid)
-        {
-            Debug.LogWarning("No valid controller device found");
-        }
-    }*/
-
     private void CreateRenderTexture()
     {
-        RenderTexture newTexture = new RenderTexture(256, 256, 32, RenderTextureFormat.Default, RenderTextureReadWrite.sRGB);
-        newTexture.antiAliasing = 4;
+            RenderTexture newTexture = new RenderTexture(256, 256, 32, RenderTextureFormat.Default, RenderTextureReadWrite.sRGB);
+            newTexture.antiAliasing = 4;
 
-        renderCamera.targetTexture = newTexture;
-        screenRenderer.material.mainTexture = newTexture;
+            renderCamera.targetTexture = newTexture;
+            screenRenderer.material.mainTexture = newTexture;
     }
 
     public void TakePhoto()
     {
-        Photo newPhoto = CreatePhoto();
-        SetPhotoImage(newPhoto);
+        if (!pictureAlreadyOut)
+        {
+            Photo newPhoto = CreatePhoto();
+            SetPhotoImage(newPhoto);
+            pictureAlreadyOut = true;
+        }
     }
 
     private Photo CreatePhoto()
@@ -169,13 +139,9 @@ public class Polaroid : MonoBehaviour
         }
     }
 
-    /*private void Update()
+    public void SetPictureAlreadyOut(bool value)
     {
-        Debug.Log(controllerDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 thumbstickValue));
-        if (renderCamera.enabled && controllerDevice.isValid)
-        {
-            Debug.Log("dans update");
-            Zoom();
-        }
-    }*/
+        Debug.Log("jejejejjjejejejeeejejejej");
+        pictureAlreadyOut = value;
+    }
 }

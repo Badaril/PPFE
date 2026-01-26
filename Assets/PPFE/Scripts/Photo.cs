@@ -9,6 +9,8 @@ public class Photo : MonoBehaviour
     private Collider currentCollider = null;
     private ApplyPhysics applyPhysics = null;
 
+    //public Polaroid polaroid = null;
+
     private void Awake()
     {
         currentCollider = GetComponent<Collider>();
