@@ -7,6 +7,7 @@ public class Polaroid : MonoBehaviour
     public GameObject photoPrefab = null;
     public MeshRenderer screenRenderer = null;
     public Transform spawnLocation = null;
+    public PlayQuickSound playQuickSound = null;
 
     private Camera renderCamera = null;
     private InputDevice rightHandDevice;
@@ -79,6 +80,7 @@ public class Polaroid : MonoBehaviour
     {
         if (!pictureAlreadyOut)
         {
+            playQuickSound.Play();
             Photo newPhoto = CreatePhoto();
             newPhoto.polaroid = this;
             SetPhotoImage(newPhoto);
