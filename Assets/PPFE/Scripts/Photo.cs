@@ -12,6 +12,8 @@ public class Photo : MonoBehaviour
 
     public Polaroid polaroid = null;
 
+    public TypeOfAnimal animalInPicture = TypeOfAnimal.None;
+
     private void Awake()
     {
         currentCollider = GetComponent<Collider>();
@@ -44,6 +46,8 @@ public class Photo : MonoBehaviour
     {
         imageRenderer.material.color = Color.white;
         imageRenderer.material.mainTexture = texture;
+
+        //Debug.Log(animalInPicture);
     }
 
     public void EnablePhysics()

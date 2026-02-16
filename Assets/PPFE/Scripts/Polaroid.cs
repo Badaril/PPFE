@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.XR;
 using System.Collections.Generic;
+using System.Linq;
 
 public class Polaroid : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class Polaroid : MonoBehaviour
 
     private float currentFOV;
     private bool pictureAlreadyOut;
+
+    [Header("Raycast Origins")]
+    public GameObject[] RaycastOrigins;
+    private TypeOfAnimal animaltype = TypeOfAnimal.None;
 
     private void Awake()
     {
@@ -43,6 +48,13 @@ public class Polaroid : MonoBehaviour
         if (renderCamera.enabled)
         {
             Zoom();
+        }
+
+        for (int i = 0; i < RaycastOrigins.Length; i++)
+        {
+            Ray ray = new Ray(RaycastOrigins[i].transform.position, transform.forward);
+            Physics.Raycast(ray, out RaycastHit hit, 100f);
+            Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red);
         }
     }
 
@@ -80,6 +92,25 @@ public class Polaroid : MonoBehaviour
     {
         if (!pictureAlreadyOut)
         {
+            List<RaycastHit> listOfHit = new List<RaycastHit>();
+            List<RaycastHit> listOfHitAnimals = new List<RaycastHit>();
+            for (int i = 0; i < RaycastOrigins.Length; i++)
+            {
+                Ray ray = new Ray(RaycastOrigins[i].transform.position, transform.forward);
+                Physics.Raycast(ray, out RaycastHit hit, 100f);
+                listOfHit.Add(hit);
+                if (hit.collider.GetComponent<AnimalType>() != null) 
+                {
+                    listOfHitAnimals.Add(hit);
+                }
+            }
+
+            if (listOfHitAnimals.Count >= listOfHit.Count / 2) 
+            {
+                animaltype = listOfHitAnimals[0].collider.GetComponent<AnimalType>().type;
+                Debug.Log(animaltype.ToString());
+            }
+            
             playQuickSound.Play();
             Photo newPhoto = CreatePhoto();
             newPhoto.polaroid = this;
@@ -91,6 +122,7 @@ public class Polaroid : MonoBehaviour
     private Photo CreatePhoto()
     {
         GameObject photoObject = Instantiate(photoPrefab, spawnLocation.position, spawnLocation.rotation, transform);
+        photoObject.GetComponent<Photo>().animalInPicture = animaltype;
         return photoObject.GetComponent<Photo>();
     }
 
@@ -143,5 +175,9 @@ public class Polaroid : MonoBehaviour
     public void SetPictureAlreadyOut(bool value)
     {
         pictureAlreadyOut = value;
+        if (!pictureAlreadyOut) 
+        {
+            animaltype = TypeOfAnimal.None;
+        }
     }
 }
