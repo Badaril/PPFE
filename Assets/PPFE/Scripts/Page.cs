@@ -10,7 +10,7 @@ public class Page : MonoBehaviour
 {
     public GameObject pictureSocket;
     public TypeOfAnimal animalNeeded;
-    public HingeJoint joint;
+    /*public HingeJoint joint;
 
     [System.Obsolete]
     private void LateUpdate()
@@ -20,7 +20,7 @@ public class Page : MonoBehaviour
         {
             joint.gameObject.SetActive(true);
         }
-    }
+    }*/
 
     public void CheckPicture()
     {
