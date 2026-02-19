@@ -50,12 +50,12 @@ public class Polaroid : MonoBehaviour
             Zoom();
         }
 
-        for (int i = 0; i < RaycastOrigins.Length; i++)
+        /*for (int i = 0; i < RaycastOrigins.Length; i++)
         {
             Ray ray = new Ray(RaycastOrigins[i].transform.position, transform.forward);
             Physics.Raycast(ray, out RaycastHit hit, 100f);
             Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red);
-        }
+        }*/
     }
 
     private void TryInitializeControllers()

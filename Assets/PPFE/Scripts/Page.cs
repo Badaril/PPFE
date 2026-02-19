@@ -1,6 +1,4 @@
-using System.Collections;
-using Oculus.Interaction;
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -9,18 +7,14 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class Page : MonoBehaviour
 {
     public GameObject pictureSocket;
+    public GameObject picture = null;
     public TypeOfAnimal animalNeeded;
-    /*public HingeJoint joint;
-
-    [System.Obsolete]
-    private void LateUpdate()
-    {
-
-        if (!joint.gameObject.active)
-        {
-            joint.gameObject.SetActive(true);
-        }
-    }*/
+    public Texture map;
+    public TextMeshPro title;
+    public TextMeshPro descriptionText;
+    public int pageNumber;
+    public int nextPage;
+    public int previousPage;
 
     public void CheckPicture()
     {
@@ -28,13 +22,33 @@ public class Page : MonoBehaviour
 
         if (photo.GetComponent<Photo>().animalInPicture == animalNeeded)
         {
-            Debug.Log(photo.GetComponent<XRGrabInteractable>().interactionLayers + "avant");
             photo.GetComponent<XRGrabInteractable>().interactionLayers = InteractionLayerMask.GetMask("Locked");
-            Debug.Log(photo.GetComponent<XRGrabInteractable>().interactionLayers + "apres");
-            /*photo.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            photo.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-            photo.GetComponent<Rigidbody>().useGravity = false;
-            photo.GetComponent<Rigidbody>().isKinematic = true;*/
         }
+    }
+
+    public void SetText(string titleText, string text)
+    {
+        title.text = titleText;
+        descriptionText.text = text;
+    }
+
+    public void SetMap(Texture mapTexture)
+    {
+        map = mapTexture;
+    }
+
+    public void SetPicture(GameObject nextPicture)
+    {
+        picture = nextPicture;
+    }
+
+    public void SetAnimalType(TypeOfAnimal nextAnimal)
+    {
+        animalNeeded = nextAnimal;
+    }
+
+    public bool CheckPictureSocket()
+    {
+        return pictureSocket.GetComponent<XRSocketInteractor>().firstInteractableSelected.transform.gameObject != null;
     }
 }
