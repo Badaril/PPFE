@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class BlocNote : MonoBehaviour
 {
@@ -8,38 +9,63 @@ public class BlocNote : MonoBehaviour
     public GameObject[] listOfPictures;
     public int actualIndex;
 
-    public void NextPage()
+    private void Update()
     {
-        if (pages[pages[actualIndex].nextPage] != null)
+        //Debug.Log(Vector3.Dot(transform.forward, pages[pages[actualIndex].previousPage].gameObject.transform.forward));
+    }
+
+    public void TurnPage(int pageIndex)
+    {
+        actualIndex = pageIndex;
+        if (Vector3.Dot(transform.forward, pages[actualIndex].gameObject.transform.forward) >= 0.98f)
         {
-            actualIndex = pages[actualIndex].nextPage;
-            var newPage = pages[actualIndex];
-            pages[actualIndex].SetAnimalType(newPage.animalNeeded);
-            pages[actualIndex].SetMap(newPage.map);
-            pages[actualIndex].SetPicture(listOfPictures[newPage.pageNumber]);
-            pages[actualIndex].SetText(newPage.title.text, newPage.descriptionText.text);
+            if (pages[actualIndex].nextPage != -1)
+            {
+                Debug.Log("suivant");
+                pages[pages[actualIndex].nextPage].GetComponent<MeshRenderer>().enabled = true;
+                pages[pages[actualIndex].nextPage].visual.SetActive(true);
+                pages[pages[actualIndex].nextPage].GetComponent<XRGrabInteractable>().enabled = true;
+                pages[pages[actualIndex].nextPage].GetComponent<BoxCollider>().enabled = true;
+            }
+        }
+        else /*if (Vector3.Dot(transform.forward, pages[pages[actualIndex].previousPage].gameObject.transform.forward) <= 0.98f)*/
+        {
+            Debug.Log("précédent");
+            /*if (pages[actualIndex].previousPage != -1)
+            {*/
+            pages[pages[actualIndex].previousPage].GetComponent<MeshRenderer>().enabled = true;
+            pages[pages[actualIndex].previousPage].visual.SetActive(true);
+            pages[pages[actualIndex].previousPage].GetComponent<XRGrabInteractable>().enabled = true;
+            pages[pages[actualIndex].previousPage].GetComponent<BoxCollider>().enabled = true;
+            //}
         }
     }
 
-    public void PreviousPage()
+    public void UnsetPage()
     {
-        if (pages[actualIndex].previousPage >= 0)
+        if (Vector3.Dot(transform.up, pages[actualIndex].gameObject.transform.up) <= 0)
         {
-            actualIndex = pages[actualIndex].previousPage;
-            var newPage = pages[actualIndex];
-            pages[actualIndex].SetAnimalType(newPage.animalNeeded);
-            pages[actualIndex].SetMap(newPage.map);
-            pages[actualIndex].SetPicture(listOfPictures[newPage.pageNumber]);
-            pages[actualIndex].SetText(newPage.title.text, newPage.descriptionText.text);
+            if (pages[actualIndex].previousPage != -1)
+            {
+                pages[pages[actualIndex].previousPage].GetComponent<MeshRenderer>().enabled = false;
+                pages[pages[actualIndex].previousPage].visual.SetActive(false);
+                pages[pages[actualIndex].previousPage].GetComponent<XRGrabInteractable>().enabled = false;
+                pages[pages[actualIndex].previousPage].GetComponent<BoxCollider>().enabled = false;
+            }
+        }
+        else /*if (Vector3.Dot(transform.forward, pages[pages[actualIndex].previousPage].gameObject.transform.forward) <= 0)*/
+        {
+            if (pages[actualIndex].nextPage != -1)
+            {
+                pages[pages[actualIndex].nextPage].GetComponent<MeshRenderer>().enabled = false;
+                pages[pages[actualIndex].nextPage].visual.SetActive(false);
+                pages[pages[actualIndex].nextPage].GetComponent<XRGrabInteractable>().enabled = false;
+                pages[pages[actualIndex].nextPage].GetComponent<BoxCollider>().enabled = false;
+            }
         }
     }
 
-    public void AddPictureInBlocnote(GameObject picture)
-    {
-        listOfPictures[pages[actualIndex].pageNumber] = picture;
-    }
-
-    public void OnTriggerEnter(Collider other)
+    /*public void OnTriggerEnter(Collider other)
     {
         NextPage();
     }
@@ -47,5 +73,5 @@ public class BlocNote : MonoBehaviour
     public void OnTriggerExit(Collider other)
     {
         PreviousPage();
-    }
+    }*/
 }

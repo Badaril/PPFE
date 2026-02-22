@@ -7,11 +7,9 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class Page : MonoBehaviour
 {
     public GameObject pictureSocket;
-    public GameObject picture = null;
     public TypeOfAnimal animalNeeded;
-    public Texture map;
-    public TextMeshPro title;
-    public TextMeshPro descriptionText;
+    [SerializeField] private BlocNote blocNote;
+    public GameObject visual;
     public int pageNumber;
     public int nextPage;
     public int previousPage;
@@ -26,29 +24,10 @@ public class Page : MonoBehaviour
         }
     }
 
-    public void SetText(string titleText, string text)
+    public void UpdateBlocnote()
     {
-        title.text = titleText;
-        descriptionText.text = text;
+        blocNote.TurnPage(pageNumber);
     }
 
-    public void SetMap(Texture mapTexture)
-    {
-        map = mapTexture;
-    }
 
-    public void SetPicture(GameObject nextPicture)
-    {
-        picture = nextPicture;
-    }
-
-    public void SetAnimalType(TypeOfAnimal nextAnimal)
-    {
-        animalNeeded = nextAnimal;
-    }
-
-    public bool CheckPictureSocket()
-    {
-        return pictureSocket.GetComponent<XRSocketInteractor>().firstInteractableSelected.transform.gameObject != null;
-    }
 }
