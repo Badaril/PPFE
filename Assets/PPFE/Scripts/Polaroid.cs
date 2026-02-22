@@ -99,9 +99,12 @@ public class Polaroid : MonoBehaviour
                 Ray ray = new Ray(RaycastOrigins[i].transform.position, transform.forward);
                 Physics.Raycast(ray, out RaycastHit hit, 100f);
                 listOfHit.Add(hit);
-                if (hit.collider.GetComponent<AnimalType>() != null) 
+                if (hit.collider != null)
                 {
-                    listOfHitAnimals.Add(hit);
+                    if (hit.collider.GetComponent<AnimalType>() != null)
+                    {
+                        listOfHitAnimals.Add(hit);
+                    }
                 }
             }
 
