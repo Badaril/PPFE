@@ -11,6 +11,7 @@ public class BlocNote : MonoBehaviour
 
     private void Update()
     {
+        //Debug.Log(actualIndex);
         //Debug.Log(Vector3.Dot(transform.forward, pages[pages[actualIndex].previousPage].gameObject.transform.forward));
     }
 
@@ -51,6 +52,7 @@ public class BlocNote : MonoBehaviour
                 pages[pages[actualIndex].previousPage].visual.SetActive(false);
                 pages[pages[actualIndex].previousPage].GetComponent<XRGrabInteractable>().enabled = false;
                 pages[pages[actualIndex].previousPage].GetComponent<BoxCollider>().enabled = false;
+                actualIndex = pages[actualIndex].previousPage;
             }
         }
         else /*if (Vector3.Dot(transform.forward, pages[pages[actualIndex].previousPage].gameObject.transform.forward) <= 0)*/

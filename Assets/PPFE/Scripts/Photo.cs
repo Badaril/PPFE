@@ -46,7 +46,7 @@ public class Photo : MonoBehaviour
     {
         imageRenderer.material.color = Color.white;
         imageRenderer.material.mainTexture = texture;
-        //Debug.Log(animalInPicture);
+        Debug.Log(animalInPicture);
     }
 
     public void EnablePhysics()

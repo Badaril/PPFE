@@ -21,6 +21,7 @@ public class Page : MonoBehaviour
         if (photo.GetComponent<Photo>().animalInPicture == animalNeeded)
         {
             photo.GetComponent<XRGrabInteractable>().interactionLayers = InteractionLayerMask.GetMask("Locked");
+            GetComponent<AudioSource>().Play();
         }
     }
 
