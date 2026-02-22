@@ -1538,7 +1538,6 @@ GameObject:
   - component: {fileID: 364578164}
   - component: {fileID: 364578163}
   - component: {fileID: 364578162}
-  - component: {fileID: 364578166}
   m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: Untagged
@@ -2397,27 +2396,6 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
---- !u!135 &364578166
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 364578160}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.50250006
-  m_Center: {x: 0.5, y: 1.1176, z: -0.6080001}
 --- !u!1 &369819090 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 18c7855ad6b95c44398401bb6113d923, type: 3}
@@ -2886,7 +2864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4187301327132575332, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: animalNeeded
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4187301327132575332, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: previousPage
@@ -2894,7 +2872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4830880593763971439, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_text
-      value: 3
+      value: sanglier
       objectReference: {fileID: 0}
     - target: {fileID: 5631205335328968123, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_Enabled
@@ -2919,6 +2897,11 @@ PrefabInstance:
     - target: {fileID: 7103123962145354847, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710079261312389055, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_text
+      value: "Puissant mammif\xE8re au corps massif et au groin fouisseur, il fr\xE9quente
+        for\xEAts, marais et cultures."
       objectReference: {fileID: 0}
     - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_InteractionManager
@@ -4498,79 +4481,6 @@ Transform:
   - {fileID: 712900737}
   m_Father: {fileID: 1313711681}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &663857144
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7516989854015812293, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
-      propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7516989854015812293, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
-      propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7516989854015812293, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
-      propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.769
-      objectReference: {fileID: 0}
-    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.77851117
-      objectReference: {fileID: 0}
-    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.49143976
-      objectReference: {fileID: 0}
-    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7516989854395125640, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
-      propertyPath: m_Name
-      value: BigRedButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 7516989854951799701, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
-      propertyPath: m_ProvidesContacts
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
 --- !u!1 &665346244 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3d694b3ac084e4e49a7dd260d9008d0c, type: 3}
@@ -5008,7 +4918,6 @@ GameObject:
   - component: {fileID: 712900740}
   - component: {fileID: 712900739}
   - component: {fileID: 712900738}
-  - component: {fileID: 712900742}
   m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: Untagged
@@ -5867,27 +5776,6 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
---- !u!135 &712900742
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 712900736}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.50250006
-  m_Center: {x: -0.5, y: -0.6080001, z: 1.1176002}
 --- !u!1 &726028489
 GameObject:
   m_ObjectHideFlags: 0
@@ -7577,7 +7465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4187301327132575332, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: animalNeeded
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4187301327132575332, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: previousPage
@@ -7585,7 +7473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4830880593763971439, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_text
-      value: 4
+      value: Biche
       objectReference: {fileID: 0}
     - target: {fileID: 5631205335328968123, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_Enabled
@@ -7610,6 +7498,11 @@ PrefabInstance:
     - target: {fileID: 7103123962145354847, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710079261312389055, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_text
+      value: "Femelle du cerf \xE9laphe, elle fr\xE9quente for\xEAts et clairi\xE8res
+        o\xF9 elle vit en hardes avec ses petits."
       objectReference: {fileID: 0}
     - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_InteractionManager
@@ -8249,7 +8142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Page
   pictureSocket: {fileID: 1704245338}
-  animalNeeded: 4
+  animalNeeded: 8
   blocNote: {fileID: 0}
   visual: {fileID: 0}
   pageNumber: 0
@@ -8430,11 +8323,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4187301327132575332, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: animalNeeded
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4830880593763971439, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_text
-      value: 2
+      value: renard roux
       objectReference: {fileID: 0}
     - target: {fileID: 5631205335328968123, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_Enabled
@@ -8459,6 +8352,11 @@ PrefabInstance:
     - target: {fileID: 7103123962145354847, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710079261312389055, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_text
+      value: "Mammif\xE8re opportuniste au pelage roux et \xE0 la queue touffue,
+        il occupe for\xEAts, campagnes et m\xEAme villes."
       objectReference: {fileID: 0}
     - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_InteractionManager
@@ -8560,7 +8458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4830880593763971439, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_text
-      value: 7
+      value: 'Chauve-souris : petit rhinolophe'
       objectReference: {fileID: 0}
     - target: {fileID: 5631205335328968123, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_Enabled
@@ -8585,6 +8483,12 @@ PrefabInstance:
     - target: {fileID: 7103123962145354847, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710079261312389055, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_text
+      value: "Petite chauve-souris reconnaissable \xE0 son appendice nasal en forme
+        de fer \xE0 cheval, elle vit pr\xE8s des prairies et se nourrit proche de
+        cours d'eau."
       objectReference: {fileID: 0}
     - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_InteractionManager
@@ -9493,7 +9397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4187301327132575332, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: animalNeeded
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4187301327132575332, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: previousPage
@@ -9501,7 +9405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4830880593763971439, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_text
-      value: 5
+      value: chouette effraie des clochers
       objectReference: {fileID: 0}
     - target: {fileID: 5631205335328968123, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_Enabled
@@ -9526,6 +9430,11 @@ PrefabInstance:
     - target: {fileID: 7103123962145354847, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710079261312389055, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_text
+      value: "Rapace nocturne au visage en c\u0153ur, elle fr\xE9quente les campagnes
+        ouvertes et niche en hauteur, comme des clochers ou des arbres morts."
       objectReference: {fileID: 0}
     - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_InteractionManager
@@ -10142,7 +10051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4187301327132575332, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: animalNeeded
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4187301327132575332, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: previousPage
@@ -10150,7 +10059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4830880593763971439, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_text
-      value: 6
+      value: hibou grand-duc
       objectReference: {fileID: 0}
     - target: {fileID: 5631205335328968123, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_Enabled
@@ -10175,6 +10084,11 @@ PrefabInstance:
     - target: {fileID: 7103123962145354847, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710079261312389055, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_text
+      value: "Plus grand rapace nocturne d\u2019Europe, il se reconna\xEEt \xE0 ses
+        aigrettes et \xE0 ses yeux orange per\xE7ants. Il niche au sommet de conif\xE8res."
       objectReference: {fileID: 0}
     - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_InteractionManager
@@ -10781,7 +10695,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CHOUETTE EFFRAIE DES CLOCHERS
+  m_text: "h\xE9risson"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f4a43af7a45394240a4cda87cb8c6915, type: 2}
   m_sharedMaterial: {fileID: 1941099576983707744, guid: f4a43af7a45394240a4cda87cb8c6915, type: 2}
@@ -10918,8 +10832,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Rapace nocturne au visage en c\u0153ur, elle fr\xE9quente les campagnes
-    ouvertes et niche volontiers dans les granges et clochers."
+  m_text: "Petit mammif\xE8re nocturne au dos couvert de piquants, il fr\xE9quente
+    jardins, haies et lisi\xE8res de for\xEAts."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6726a731a4b0e5b4696cbf6dc10b09eb, type: 2}
   m_sharedMaterial: {fileID: -1062709589498365564, guid: 6726a731a4b0e5b4696cbf6dc10b09eb, type: 2}
@@ -11207,11 +11121,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4187301327132575332, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: animalNeeded
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4187301327132575332, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: previousPage
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830880593763971439, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_text
+      value: grand paon de nuit
       objectReference: {fileID: 0}
     - target: {fileID: 5226198154037178188, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_Enabled
@@ -11240,6 +11158,12 @@ PrefabInstance:
     - target: {fileID: 7103123962145354847, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710079261312389055, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_text
+      value: "Plus grand papillon de nuit d\u2019Europe, il impressionne par ses
+        larges ailes orn\xE9es d\u2019ocelles \xE9voquant des yeux. Il est attir\xE9
+        par la lumi\xE8re."
       objectReference: {fileID: 0}
     - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_InteractionManager
@@ -11353,7 +11277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4529798761303424657, guid: 9b0fb31a22d02324fa917fffe1e97971, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.609
+      value: 0.655
       objectReference: {fileID: 0}
     - target: {fileID: 4529798761303424657, guid: 9b0fb31a22d02324fa917fffe1e97971, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11399,6 +11323,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8809513864877370193, guid: 9b0fb31a22d02324fa917fffe1e97971, type: 3}
+      propertyPath: volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9198064866745666384, guid: 9b0fb31a22d02324fa917fffe1e97971, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -11433,4 +11361,3 @@ SceneRoots:
   - {fileID: 1127187251}
   - {fileID: 177488508}
   - {fileID: 1084803978}
-  - {fileID: 663857144}
