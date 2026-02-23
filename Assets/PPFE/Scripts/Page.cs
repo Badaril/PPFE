@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -16,42 +15,69 @@ public class Page : MonoBehaviour
     public int previousPage;
     public XRInteractionManager interactManager;
 
+    /*private void Update()
+    {
+        Debug.Log(picture + this.gameObject.ToString());
+    }*/
+
     public void CheckPicture()
     {
+        Debug.Log("je chech " + this.gameObject.ToString());
         picture = pictureSocket.GetComponent<XRSocketInteractor>().firstInteractableSelected.transform.gameObject;
-        picture.transform.SetParent(pictureSocket.transform, true);
+        picture.transform.SetParent(this.gameObject.transform, false);
+        //picture.GetComponent<XRGrabInteractable>().interactionLayers = InteractionLayerMask.GetMask("InSocket");
         Debug.Log(picture);
 
         if (picture.GetComponent<Photo>().animalInPicture == animalNeeded)
         {
-            picture.GetComponent<Rigidbody>().isKinematic = true;
+            
             picture.GetComponent<XRGrabInteractable>().interactionLayers = InteractionLayerMask.GetMask("Locked");
             GetComponent<AudioSource>().Play();
-            //pictureSocket.GetComponent<XRSocketInteractor>().enabled = false;
         }
     }
 
     public bool CheckSocket()
     {
-        return pictureSocket.GetComponent<XRSocketInteractor>().firstInteractableSelected.transform.gameObject != null;
+        if (picture != null)
+        {
+            Debug.Log("le check est true");
+            return true; //pictureSocket.GetComponent<XRSocketInteractor>().firstInteractableSelected.transform.gameObject != null;
+        }
+        Debug.Log("le check est false");
+        return false;
     }
 
-    public void SetSocket()
+    public void SetSocket(bool display)
     {
-        picture.SetActive(true);
-        interactManager.SelectEnter(pictureSocket.GetComponent<XRSocketInteractor>(), picture.GetComponent<IXRSelectInteractable>());
+        Debug.Log("je set la socket en " + display);
+        picture.SetActive(display);
+        /*if (display)
+        {
+            picture.SetActive(true);
+            interactManager.SelectEnter(pictureSocket.GetComponent<XRSocketInteractor>(), picture.GetComponent<IXRSelectInteractable>());
+        }
+        else
+        {
+            picture.SetActive(false);
+            interactManager.SelectExit(pictureSocket.GetComponent<XRSocketInteractor>(), picture.GetComponent<IXRSelectInteractable>());
+        }*/
 
     }
 
     public void UnsetSocket()
     {
-        picture.SetActive(false);
+        if (picture != null)
+        {
+            if (picture.GetComponent<XRGrabInteractable>().interactionLayers.ToString() != "Locked")
+            {
+                picture.GetComponent<XRGrabInteractable>().interactionLayers = InteractionLayerMask.GetMask("Photo");
+                picture = null;
+            }
+        }
     }
 
     public void UpdateBlocnote()
     {
         blocNote.TurnPage(pageNumber);
     }
-
-
 }

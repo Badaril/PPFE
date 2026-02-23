@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.XR;
 using System.Collections.Generic;
-using System.Linq;
 
 public class Polaroid : MonoBehaviour
 {
@@ -20,7 +19,7 @@ public class Polaroid : MonoBehaviour
     public float maxFOV = 60f;
     public float zoomSpeed = 30f;
 
-    private float currentFOV;
+    private float currentFOV = 40f;
     private bool pictureAlreadyOut;
 
     [Header("Raycast Origins")]
@@ -49,13 +48,6 @@ public class Polaroid : MonoBehaviour
         {
             Zoom();
         }
-
-        /*for (int i = 0; i < RaycastOrigins.Length; i++)
-        {
-            Ray ray = new Ray(RaycastOrigins[i].transform.position, transform.forward);
-            Physics.Raycast(ray, out RaycastHit hit, 100f);
-            Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red);
-        }*/
     }
 
     private void TryInitializeControllers()
@@ -65,7 +57,6 @@ public class Polaroid : MonoBehaviour
         if (devices.Count > 0)
         {
             rightHandDevice = devices[0];
-            //Debug.Log($"Right controller found: {rightHandDevice.name}");
         }
 
         devices.Clear();
@@ -73,7 +64,6 @@ public class Polaroid : MonoBehaviour
         if (devices.Count > 0)
         {
             leftHandDevice = devices[0];
-            //Debug.Log($"Left controller found: {leftHandDevice.name}");
         }
 
         deviceInitialized = rightHandDevice.isValid || leftHandDevice.isValid;
@@ -167,7 +157,7 @@ public class Polaroid : MonoBehaviour
             currentFOV = Mathf.Clamp(currentFOV, minFOV, maxFOV);
             renderCamera.fieldOfView = currentFOV;
         }
-        else if (leftHandDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 thumbstickValueLeft))
+        if (leftHandDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 thumbstickValueLeft))
         {
             currentFOV -= thumbstickValueLeft.y * zoomSpeed * Time.deltaTime;
             currentFOV = Mathf.Clamp(currentFOV, minFOV, maxFOV);

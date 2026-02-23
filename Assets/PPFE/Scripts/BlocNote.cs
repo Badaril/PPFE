@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
@@ -11,8 +9,7 @@ public class BlocNote : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(actualIndex);
-        //Debug.Log(Vector3.Dot(transform.forward, pages[pages[actualIndex].previousPage].gameObject.transform.forward));
+        //Debug.Log("actual index : " + actualIndex);
     }
 
     public void TurnPage(int pageIndex)
@@ -22,31 +19,31 @@ public class BlocNote : MonoBehaviour
         {
             if (pages[actualIndex].nextPage != -1)
             {
-                Debug.Log("suivant");
                 pages[pages[actualIndex].nextPage].GetComponent<MeshRenderer>().enabled = true;
+                pages[pages[actualIndex].nextPage].visual.SetActive(true);
                 if (pages[pages[actualIndex].nextPage].CheckSocket())
                 {
-                    pages[pages[actualIndex].nextPage].SetSocket();
+                    pages[pages[actualIndex].nextPage].SetSocket(true);
                 }
-                pages[pages[actualIndex].nextPage].visual.SetActive(true);
+                
                 pages[pages[actualIndex].nextPage].GetComponent<XRGrabInteractable>().enabled = true;
-                pages[pages[actualIndex].nextPage].GetComponent<BoxCollider>().enabled = true;
+                /* jsp pourquoi cest la*/ pages[pages[actualIndex].nextPage].GetComponent<BoxCollider>().enabled = true;
             }
         }
-        else /*if (Vector3.Dot(transform.forward, pages[pages[actualIndex].previousPage].gameObject.transform.forward) <= 0.98f)*/
+        else
         {
-            Debug.Log("précédent");
-            /*if (pages[actualIndex].previousPage != -1)
-            {*/
-            pages[pages[actualIndex].previousPage].GetComponent<MeshRenderer>().enabled = true;
-            if (pages[pages[actualIndex].previousPage].CheckSocket())
+            if (pages[actualIndex].previousPage > 0)
             {
-                pages[pages[actualIndex].previousPage].SetSocket();
+                pages[pages[actualIndex].previousPage].GetComponent<MeshRenderer>().enabled = true;
+                pages[pages[actualIndex].previousPage].visual.SetActive(true);
+                if (pages[pages[actualIndex].previousPage].CheckSocket())
+                {
+                    pages[pages[actualIndex].previousPage].SetSocket(true);
+                }
+                
+                pages[pages[actualIndex].previousPage].GetComponent<XRGrabInteractable>().enabled = true;
+                pages[pages[actualIndex].previousPage].GetComponent<BoxCollider>().enabled = true;
             }
-            pages[pages[actualIndex].previousPage].visual.SetActive(true);
-            pages[pages[actualIndex].previousPage].GetComponent<XRGrabInteractable>().enabled = true;
-            pages[pages[actualIndex].previousPage].GetComponent<BoxCollider>().enabled = true;
-            //}
         }
     }
 
@@ -54,12 +51,12 @@ public class BlocNote : MonoBehaviour
     {
         if (Vector3.Dot(transform.up, pages[actualIndex].gameObject.transform.up) <= 0)
         {
-            if (pages[actualIndex].previousPage != -1)
+            if (pages[actualIndex].previousPage > 0)
             {
                 pages[pages[actualIndex].previousPage].GetComponent<MeshRenderer>().enabled = false;
                 if (pages[pages[actualIndex].previousPage].CheckSocket())
                 {
-                    pages[pages[actualIndex].previousPage].UnsetSocket();
+                    pages[pages[actualIndex].previousPage].SetSocket(false);
                 }
                 pages[pages[actualIndex].previousPage].visual.SetActive(false);
                 pages[pages[actualIndex].previousPage].GetComponent<XRGrabInteractable>().enabled = false;
@@ -67,14 +64,14 @@ public class BlocNote : MonoBehaviour
                 
             }
         }
-        else /*if (Vector3.Dot(transform.forward, pages[pages[actualIndex].previousPage].gameObject.transform.forward) <= 0)*/
+        else
         {
             if (pages[actualIndex].nextPage != -1)
             {
                 pages[pages[actualIndex].nextPage].GetComponent<MeshRenderer>().enabled = false;
                 if (pages[pages[actualIndex].nextPage].CheckSocket())
                 {
-                    pages[pages[actualIndex].nextPage].UnsetSocket();
+                    pages[pages[actualIndex].nextPage].SetSocket(false);
                 }
                 pages[pages[actualIndex].nextPage].visual.SetActive(false);
                 pages[pages[actualIndex].nextPage].GetComponent<XRGrabInteractable>().enabled = false;
@@ -83,14 +80,4 @@ public class BlocNote : MonoBehaviour
             }
         }
     }
-
-    /*public void OnTriggerEnter(Collider other)
-    {
-        NextPage();
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-        PreviousPage();
-    }*/
 }

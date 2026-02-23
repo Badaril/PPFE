@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(ApplyPhysics))]
@@ -13,6 +12,8 @@ public class Photo : MonoBehaviour
     public Polaroid polaroid = null;
 
     public TypeOfAnimal animalInPicture = TypeOfAnimal.None;
+
+    public int ID;
 
     private void Awake()
     {
@@ -46,7 +47,7 @@ public class Photo : MonoBehaviour
     {
         imageRenderer.material.color = Color.white;
         imageRenderer.material.mainTexture = texture;
-        Debug.Log(animalInPicture);
+        //Debug.Log(animalInPicture);
     }
 
     public void EnablePhysics()
