@@ -1922,6 +1922,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 364578162}
+        m_TargetAssemblyTypeName: UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals.XRInteractorLineVisual,
+          Unity.XR.Interaction.Toolkit
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -1937,6 +1950,19 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 364578162}
+        m_TargetAssemblyTypeName: UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals.XRInteractorLineVisual,
+          Unity.XR.Interaction.Toolkit
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
@@ -2535,8 +2561,8 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 1
   m_Method: 0
-  m_Duration: 20
-  m_MaxSpeed: 18.895088
+  m_Duration: 40
+  m_MaxSpeed: 9.447544
   m_EasingMode: 0
   m_AlignmentMode: 1
   m_ObjectForwardAxis: 0
@@ -5350,6 +5376,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 712900738}
+        m_TargetAssemblyTypeName: UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals.XRInteractorLineVisual,
+          Unity.XR.Interaction.Toolkit
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -5365,6 +5404,19 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 712900738}
+        m_TargetAssemblyTypeName: UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals.XRInteractorLineVisual,
+          Unity.XR.Interaction.Toolkit
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
@@ -6099,8 +6151,8 @@ Transform:
   m_GameObject: {fileID: 745221066}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.99999315, z: -0, w: -0.003717084}
-  m_LocalPosition: {x: 0.23995006, y: -0.79269, z: -0.019069996}
-  m_LocalScale: {x: 1, y: 1, z: 0.85196}
+  m_LocalPosition: {x: 0.23995006, y: -0.824, z: -0.019069996}
+  m_LocalScale: {x: 1, y: 1.04, z: 0.85196}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1084803978}
@@ -6124,8 +6176,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.7160314, y: 0.77573526, z: 1.6870162}
-  m_Center: {x: 0.00000035762787, y: 0.39133358, z: 0.000000029802322}
+  m_Size: {x: 0.7160314, y: 0.09, z: 1.6870162}
+  m_Center: {x: 0.00000035762787, y: 0.74, z: 0.000000029802322}
 --- !u!1 &768642692
 GameObject:
   m_ObjectHideFlags: 0
@@ -6844,7 +6896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 116797735898211907, guid: 1ce821d9e7282cd498277a5e5cf36f05, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7425765
+      value: -0.831
       objectReference: {fileID: 0}
     - target: {fileID: 116797735898211907, guid: 1ce821d9e7282cd498277a5e5cf36f05, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7105,7 +7157,7 @@ Transform:
   m_GameObject: {fileID: 1084803977}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.88605, y: 0.792, z: 0.06907}
+  m_LocalPosition: {x: 0.88605, y: 0.828, z: 0.06907}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8209,6 +8261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Page
   pictureSocket: {fileID: 1704245338}
+  picture: {fileID: 0}
   animalNeeded: 8
   blocNote: {fileID: 451554896}
   visual: {fileID: 0}
@@ -9515,7 +9568,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 60
+  MinDistance: 70
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -10212,7 +10265,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405689313}
+      - m_Target: {fileID: 1338851118}
         m_TargetAssemblyTypeName: Page, Assembly-CSharp
         m_MethodName: CheckPicture
         m_Mode: 1
@@ -10558,7 +10611,7 @@ Transform:
   m_GameObject: {fileID: 1894351092}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.24021006, y: -0.0027999878, z: -0.43729997}
+  m_LocalPosition: {x: 0.24021006, y: -0.032, z: -0.43729997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11880,7 +11933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4529798761303424657, guid: 9b0fb31a22d02324fa917fffe1e97971, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.655
+      value: 0.694
       objectReference: {fileID: 0}
     - target: {fileID: 4529798761303424657, guid: 9b0fb31a22d02324fa917fffe1e97971, type: 3}
       propertyPath: m_LocalPosition.z
