@@ -28,6 +28,7 @@ public class BlocNote : MonoBehaviour
                 
                 pages[pages[actualIndex].nextPage].GetComponent<XRGrabInteractable>().enabled = true;
                 /* jsp pourquoi cest la*/ pages[pages[actualIndex].nextPage].GetComponent<BoxCollider>().enabled = true;
+
             }
         }
         else

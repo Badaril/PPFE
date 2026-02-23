@@ -401,6 +401,7 @@ Transform:
   m_LocalScale: {x: 0.4799999, y: 0.005, z: 0.38}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4834522280253703970}
   - {fileID: 5080011365850832838}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -564,54 +565,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Page, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Page, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Page, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Page, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1077,12 +1030,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2440762631474435474}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.51, z: 0}
-  m_LocalScale: {x: 0.071324915, y: 1, z: 0.08135953}
+  m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
+  m_LocalPosition: {x: -0.0741, y: -0.00505, z: -0.0363}
+  m_LocalScale: {x: 0.014264982, y: 0.005, z: 0.012203929}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4834522280253703970}
+  m_Father: {fileID: 5080011365850832838}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &377816345323944070
 MeshFilter:
@@ -1190,13 +1143,12 @@ Transform:
   m_GameObject: {fileID: 2868057118058582601}
   serializedVersion: 2
   m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
-  m_LocalPosition: {x: -0.0741, y: -0.0025, z: -0.0363}
-  m_LocalScale: {x: 0.2, y: 0.005, z: 0.15}
+  m_LocalPosition: {x: -0.050854176, y: 0, z: 0.014525731}
+  m_LocalScale: {x: 0.41666675, y: 1, z: 0.39473692}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3917597655294771159}
-  - {fileID: 1000070511404712111}
-  m_Father: {fileID: 5080011365850832838}
+  m_Father: {fileID: 738783050316952630}
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!65 &661033155465987729
 BoxCollider:
@@ -1217,7 +1169,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 5, z: 1}
   m_Center: {x: 0, y: 2, z: 0}
 --- !u!114 &7981693978483188815
 MonoBehaviour:
@@ -1280,9 +1232,9 @@ MonoBehaviour:
         m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
-  m_ShowInteractableHoverMeshes: 1
+  m_ShowInteractableHoverMeshes: 0
   m_InteractableHoverMeshMaterial: {fileID: 0}
-  m_InteractableCantHoverMeshMaterial: {fileID: 0}
+  m_InteractableCantHoverMeshMaterial: {fileID: 2100000, guid: d9b5d2e9a0e708445bf128fdfe812c3e, type: 2}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 0.1
@@ -2140,12 +2092,12 @@ Transform:
   m_LocalScale: {x: 2.0833337, y: 200, z: 2.6315792}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1000070511404712111}
   - {fileID: 9164703489406267117}
   - {fileID: 8864892441559798284}
   - {fileID: 5161339526838805277}
   - {fileID: 2269550375859237023}
   - {fileID: 181746170715936534}
-  - {fileID: 4834522280253703970}
   - {fileID: 5293941322584245419}
   - {fileID: 1068281812389204076}
   - {fileID: 7775665268372856477}

@@ -13,7 +13,7 @@ public class Photo : MonoBehaviour
 
     public TypeOfAnimal animalInPicture = TypeOfAnimal.None;
 
-    public int ID;
+    //public int ID = -1;
 
     private void Awake()
     {

@@ -10765,7 +10765,7 @@ MonoBehaviour:
         m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
-  m_ShowInteractableHoverMeshes: 1
+  m_ShowInteractableHoverMeshes: 0
   m_InteractableHoverMeshMaterial: {fileID: 0}
   m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
@@ -11707,8 +11707,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.43, y: 0.34, z: 0.61}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.01, y: 0.38, z: 0.73}
+  m_Center: {x: 0, y: 0.09, z: 0}
 --- !u!114 &2067596479
 MonoBehaviour:
   m_ObjectHideFlags: 0
