@@ -1185,7 +1185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 10
+    m_Bits: 24
   m_Handedness: 0
   m_AttachTransform: {fileID: 3917597655294771159}
   m_KeepSelectedTargetValid: 1
@@ -1234,7 +1234,7 @@ MonoBehaviour:
   m_StartingSelectFilters: []
   m_ShowInteractableHoverMeshes: 0
   m_InteractableHoverMeshMaterial: {fileID: 0}
-  m_InteractableCantHoverMeshMaterial: {fileID: 2100000, guid: d9b5d2e9a0e708445bf128fdfe812c3e, type: 2}
+  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 0.1

@@ -6,6 +6,20 @@ public class SoundManager : MonoBehaviour
     public GameObject[] environnmentSoundsList;
     [SerializeField] private BlocNote blocnoteRef;
 
+    private Vector3 startPosition;
+    private Quaternion startRotation;
+
+    private void Start()
+    {
+        startPosition = this.gameObject.transform.position;
+        startRotation = this.gameObject.transform.rotation;
+    }
+
+    public void ResetPostion()
+    {
+        this.gameObject.transform.SetPositionAndRotation(startPosition, startRotation);
+    }
+
     public void TurnOn()
     {
         for (int i = 0; i < environnmentSoundsList.Length; i++)

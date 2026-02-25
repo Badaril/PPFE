@@ -9,6 +9,9 @@ public class Polaroid : MonoBehaviour
     public Transform spawnLocation = null;
     public PlayQuickSound playQuickSound = null;
 
+    private Vector3 startPosition;
+    private Quaternion startRotation;
+
     private Camera renderCamera = null;
     private InputDevice rightHandDevice;
     private InputDevice leftHandDevice;
@@ -19,7 +22,7 @@ public class Polaroid : MonoBehaviour
     public float maxFOV = 60f;
     public float zoomSpeed = 30f;
 
-    private float currentFOV = 40f;
+    private float currentFOV = 20f;
     private bool pictureAlreadyOut;
 
     [Header("Raycast Origins")]
@@ -33,6 +36,8 @@ public class Polaroid : MonoBehaviour
 
     private void Start()
     {
+        startPosition = this.gameObject.transform.position;
+        startRotation = this.gameObject.transform.rotation;
         CreateRenderTexture();
         TurnOff();
     }
@@ -48,6 +53,11 @@ public class Polaroid : MonoBehaviour
         {
             Zoom();
         }
+    }
+
+    public void ResetPostion()
+    {
+        this.gameObject.transform.SetPositionAndRotation(startPosition, startRotation);
     }
 
     private void TryInitializeControllers()
