@@ -4266,7 +4266,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: dc1109f44c7fe5d47ad3e0cf6a98a14c, type: 3}
+  m_Resource: {fileID: 8300000, guid: 92c32c56b62546349822a508f4c24e5b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -4945,9 +4945,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: dc1109f44c7fe5d47ad3e0cf6a98a14c, type: 3}
+  m_Resource: {fileID: 8300000, guid: 92c32c56b62546349822a508f4c24e5b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6373,7 +6373,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 2c28fc970fc6a0d468ae9cdd8704bf31, type: 3}
+  m_Resource: {fileID: 8300000, guid: 6a8f9454790d5d64ab722a660300cb7f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -7110,6 +7110,10 @@ PrefabInstance:
     - target: {fileID: 4422934653113447346, guid: 26d3e19b3dd80ed4eb2217904b56f876, type: 3}
       propertyPath: m_Name
       value: Lamp_Table_Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422934653113447346, guid: 26d3e19b3dd80ed4eb2217904b56f876, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4422934653113447346, guid: 26d3e19b3dd80ed4eb2217904b56f876, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8772,8 +8776,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7710079261312389055, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_text
-      value: "Mammif\xE8re opportuniste au pelage roux et \xE0 la queue touffue,
-        il occupe for\xEAts, campagnes et m\xEAme villes."
+      value: "Mammif\xE8re au pelage roux et \xE0 la queue touffue, il occupe for\xEAts,
+        campagnes et m\xEAme villes."
       objectReference: {fileID: 0}
     - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_InteractionManager
@@ -10099,7 +10103,7 @@ PrefabInstance:
     - target: {fileID: 7710079261312389055, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_text
       value: "Rapace nocturne au visage en c\u0153ur, elle fr\xE9quente les campagnes
-        ouvertes et niche en hauteur, comme des clochers ou des arbres morts."
+        ouvertes et se pose en hauteur, comme des arbres morts, pour chasser."
       objectReference: {fileID: 0}
     - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_InteractionManager
@@ -10638,7 +10642,7 @@ MonoBehaviour:
         m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
-  m_ShowInteractableHoverMeshes: 1
+  m_ShowInteractableHoverMeshes: 0
   m_InteractableHoverMeshMaterial: {fileID: 0}
   m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
@@ -11994,6 +11998,10 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 139200558}
+    - target: {fileID: 8306610770443452579, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d3e0fb24c4493da47926bdb60a429675, type: 2}
     - target: {fileID: 8315683045986326705, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_IsActive
       value: 1
