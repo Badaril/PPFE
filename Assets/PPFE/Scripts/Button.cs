@@ -16,7 +16,7 @@ public class Button : MonoBehaviour
     //Checks if the current collider entering is the Button and sets off OnPressed event.
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Button" && !_deadTimeActive)
+        if (other.CompareTag("Button") && !_deadTimeActive)
         {
             onPressed?.Invoke();
             Debug.Log("I have been pressed");

@@ -183,4 +183,14 @@ public class Polaroid : MonoBehaviour
             animaltype = TypeOfAnimal.None;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Respawn"))
+        {
+            this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            ResetPostion();
+            this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        }
+    }
 }

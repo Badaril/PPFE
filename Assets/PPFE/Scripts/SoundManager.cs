@@ -37,4 +37,14 @@ public class SoundManager : MonoBehaviour
         }
         animalList[blocnoteRef.actualIndex].GetComponent<AudioSource>().enabled = false;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Respawn"))
+        {
+            this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            ResetPostion();
+            this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        }
+    }
 }
