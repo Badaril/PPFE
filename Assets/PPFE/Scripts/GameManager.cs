@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class GameManager : MonoBehaviour
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject RestOfRoom;
 
     public float timer;
-    private bool startTimer;
+    public bool startTimer;
     private Color sphereColor;
 
     private void Start()
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
         Animals.SetActive(false);
         Accessories.SetActive(false);
         sphereColor = SphereRoom.GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
+
     }
 
     private void Update()
@@ -31,7 +33,7 @@ public class GameManager : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            if (timer > 10f)
+            if (timer > 300f)
             {
                 EndGame();
                 timer = 0;
@@ -123,13 +125,6 @@ public class GameManager : MonoBehaviour
         }
         sphereColor.a = 1;
         SphereRoom.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", sphereColor);
-
-        Sounds.SetActive(false);
-        Polaroid.SetActive(false);
-        Animals.SetActive(false);
-        Accessories.SetActive(false);
-
-        RedButton.SetActive(true);
-        RestOfRoom.SetActive(true);
+        SceneManager.LoadScene("Default_Scene");
     }
 }

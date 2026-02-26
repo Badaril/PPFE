@@ -2835,6 +2835,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 451554895}
     m_Modifications:
+    - target: {fileID: 47691749179074098, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 738783050316952630, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3604,7 +3608,6 @@ MonoBehaviour:
   - {fileID: 1596361076}
   - {fileID: 1812688827}
   - {fileID: 1439739873}
-  listOfPictures: []
   actualIndex: 0
 --- !u!1 &467887678
 GameObject:
@@ -7074,7 +7077,7 @@ Transform:
   m_GameObject: {fileID: 900061259}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.9475605, z: -0, w: 0.31957665}
-  m_LocalPosition: {x: -0.204, y: 0.76041836, z: 0.392}
+  m_LocalPosition: {x: -0.217, y: 0.76041836, z: 0.385}
   m_LocalScale: {x: 0.011122409, y: 0.5208334, z: 0.005121348}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8136,7 +8139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.99899995, y: -0.3200003}
+  m_AnchoredPosition: {x: 1.316, y: 0.308}
   m_SizeDelta: {x: 0, y: -0.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1138069797
@@ -8186,8 +8189,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.03
-  m_fontSizeBase: 0.03
+  m_fontSize: 0.08
+  m_fontSizeBase: 0.08
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8374,6 +8377,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 451554895}
     m_Modifications:
+    - target: {fileID: 47691749179074098, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 738783050316952630, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9105,6 +9112,7 @@ MonoBehaviour:
   nextPage: 1
   previousPage: -1
   interactManager: {fileID: 139200558}
+  gameManager: {fileID: 0}
 --- !u!82 &1338851119
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9220,7 +9228,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1351520055
 Transform:
   m_ObjectHideFlags: 0
@@ -9323,6 +9331,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 451554895}
     m_Modifications:
+    - target: {fileID: 47691749179074098, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 738783050316952630, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9592,6 +9604,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 451554895}
     m_Modifications:
+    - target: {fileID: 47691749179074098, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 738783050316952630, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10880,6 +10896,10 @@ PrefabInstance:
       propertyPath: m_text
       value: chouette effraie des clochers
       objectReference: {fileID: 0}
+    - target: {fileID: 5593394183901881028, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5631205335328968123, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -10992,11 +11012,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5650780468570173604, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7103123962145354847, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7219695230423586410, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7710079261312389055, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_text
@@ -11568,6 +11592,7 @@ MonoBehaviour:
   SphereRoom: {fileID: 536532238}
   RestOfRoom: {fileID: 2067090728}
   timer: 0
+  startTimer: 0
 --- !u!114 &1669287756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11580,6 +11605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7724b12f832b55c4ea81b3946679fdf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HMDPresence
+  previousPresence: 1
 --- !u!114 &1669287757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11949,6 +11975,10 @@ PrefabInstance:
       propertyPath: m_text
       value: hibou grand-duc
       objectReference: {fileID: 0}
+    - target: {fileID: 5593394183901881028, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5631205335328968123, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -12061,11 +12091,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5650780468570173604, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7103123962145354847, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7219695230423586410, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7710079261312389055, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_text
@@ -12693,7 +12727,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098920614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.6}
+  m_LocalPosition: {x: 0, y: 0, z: -0.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12830,7 +12864,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112710700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.9}
+  m_LocalPosition: {x: 0, y: 0, z: -0.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13100,6 +13134,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 451554895}
     m_Modifications:
+    - target: {fileID: 47691749179074098, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 738783050316952630, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

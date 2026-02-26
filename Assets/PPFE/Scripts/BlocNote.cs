@@ -4,7 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 public class BlocNote : MonoBehaviour
 {
     public Page[] pages;
-    public GameObject[] listOfPictures;
+    private GameObject[] listOfPictures;
     public int actualIndex;
 
     private void Update()
@@ -16,6 +16,7 @@ public class BlocNote : MonoBehaviour
     {
         actualIndex = pageIndex;
 
+        //turn right to left
         if (Vector3.Dot(transform.forward, pages[actualIndex].gameObject.transform.forward) >= 0.98f)
         {
             pages[actualIndex].SetSocket(true);
@@ -32,6 +33,8 @@ public class BlocNote : MonoBehaviour
 
             }
         }
+
+        //turn left to right
         else
         {
             if (pages[actualIndex].previousPage == 0)
@@ -57,7 +60,6 @@ public class BlocNote : MonoBehaviour
     {
         if (Vector3.Dot(transform.up, pages[actualIndex].gameObject.transform.up) <= 0)
         {
-
             pages[actualIndex].SetSocket(true);
 
             if (pages[actualIndex].previousPage == 0)
@@ -74,7 +76,6 @@ public class BlocNote : MonoBehaviour
                 pages[pages[actualIndex].previousPage].visual.SetActive(false);
                 pages[pages[actualIndex].previousPage].GetComponent<XRGrabInteractable>().enabled = false;
                 pages[pages[actualIndex].previousPage].GetComponent<BoxCollider>().enabled = false;
-                
             }
         }
         else
