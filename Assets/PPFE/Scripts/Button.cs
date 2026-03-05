@@ -5,17 +5,58 @@ using UnityEngine.Events;
 
 public class Button : MonoBehaviour
 {
-    //Time that the button is set inactive after release
-    public float deadTime = 1.0f;
-    //Bool used to lock down button during its set dead time
+    public float deadTime = 1f;
     private bool _deadTimeActive = false;
 
-    //public Unity Events we can use in the editor and tie other functions to.
-    public UnityEvent onPressed, onReleased;
+    public GameObject button;
 
-    //Checks if the current collider entering is the Button and sets off OnPressed event.
+    public UnityEvent onPressed, onReleased;
+    public Transform pressAxis;      // un empty orienté dans l'axe de pression (forward = direction)
+    public float pressDistance = 0.015f; // 1.5 cm par ex
+    private bool pressed;
+
+    void OnTriggerStay(Collider other)
+    {
+        Debug.Log("trigger stay");
+        if (pressed) return;
+
+        // position du point de contact (approx)
+        Vector3 handPos = other.ClosestPoint(transform.position);
+
+        // profondeur le long de l'axe du bouton
+        float depth = Vector3.Dot(handPos - pressAxis.position, pressAxis.forward);
+
+        if (depth > pressDistance)
+        {
+            pressed = true;
+            onPressed?.Invoke();
+        }
+    }
+
+    void Awake()
+    {
+        var rb = GetComponent<Rigidbody>();
+        rb.sleepThreshold = 0f;  // empêche l'endormissement
+    }
+
+    void OnCollisionStay(Collision c)
+    {
+        Debug.Log("collision stay");
+        var rb = GetComponent<Rigidbody>();
+        if (rb.IsSleeping()) rb.WakeUp();
+    }
+
+    private void Update()
+    {
+        if (button.GetComponent<MeshCollider>())
+        {
+            Debug.Log("je ");
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+        
         if (other.CompareTag("Button") && !_deadTimeActive)
         {
             onPressed?.Invoke();
@@ -23,8 +64,6 @@ public class Button : MonoBehaviour
         }
     }
 
-    //Checks if the current collider exiting is the Button and sets off OnReleased event.
-    //It will also call a Coroutine to make the button inactive for however long deadTime is set to.
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Button" && !_deadTimeActive)
@@ -35,7 +74,6 @@ public class Button : MonoBehaviour
         }
     }
 
-    //Locks button activity until deadTime has passed and reactivates button activity.
     IEnumerator WaitForDeadTime()
     {
         _deadTimeActive = true;

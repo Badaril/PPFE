@@ -9,10 +9,14 @@ public class SoundManager : MonoBehaviour
     private Vector3 startPosition;
     private Quaternion startRotation;
 
+    private int actualAnimalIndex;
+    public bool isAwake;
+
     private void Start()
     {
         startPosition = this.gameObject.transform.position;
         startRotation = this.gameObject.transform.rotation;
+        
     }
 
     public void ResetPostion()
@@ -22,11 +26,14 @@ public class SoundManager : MonoBehaviour
 
     public void TurnOn()
     {
+        actualAnimalIndex = blocnoteRef.actualIndex;
+        isAwake = true;
         for (int i = 0; i < environnmentSoundsList.Length; i++)
         {
             environnmentSoundsList[i].GetComponent<AudioSource>().volume /= 5f;
         }
-        animalList[blocnoteRef.actualIndex].GetComponent<AudioSource>().enabled = true;
+        
+        animalList[actualAnimalIndex].GetComponent<AudioSource>().enabled = true;
     }
 
     public void TurnOff() 
@@ -35,7 +42,9 @@ public class SoundManager : MonoBehaviour
         {
             environnmentSoundsList[i].gameObject.GetComponent<AudioSource>().volume *= 5f;
         }
+
         animalList[blocnoteRef.actualIndex].GetComponent<AudioSource>().enabled = false;
+        isAwake = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,5 +55,12 @@ public class SoundManager : MonoBehaviour
             ResetPostion();
             this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         }
+    }
+
+    public void ChangeVolume()
+    {
+        animalList[actualAnimalIndex].GetComponent<AudioSource>().enabled = false;
+        animalList[blocnoteRef.actualIndex].GetComponent<AudioSource>().enabled = true;
+        actualAnimalIndex = blocnoteRef.actualIndex;
     }
 }

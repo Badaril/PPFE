@@ -18,11 +18,34 @@ public class Page : MonoBehaviour
 
     [SerializeField] private GameManager gameManager;
 
+    public bool IsMoving;
+
     private void Update()
     {
         //Debug.Log(pictureSocket.GetComponent<XRSocketInteractor>().interactionLayers);
-        //if (picture != null) { Debug.Log(picture.activeSelf + this.gameObject.ToString()); }
+        if (picture != null) { Debug.Log(picture.activeSelf + this.gameObject.ToString()); }
+
+        if (pageNumber != 0)
+        {
+            if (this.GetComponent<Rigidbody>().linearVelocity != new Vector3(0, 0, 0) &
+                this.GetComponent<Rigidbody>().angularVelocity != new Vector3(0, 0, 0) &
+                this.GetComponent<XRGrabInteractable>().isSelected == false)
+            {
+                blocNote.actualIndex = pageNumber;
+                IsMoving = true;
+            }
+            if (this.GetComponent<Rigidbody>().linearVelocity == new Vector3(0, 0, 0) &
+                this.GetComponent<Rigidbody>().angularVelocity == new Vector3(0, 0, 0) &
+                this.GetComponent<XRGrabInteractable>().isSelected == false &
+                IsMoving)
+            {
+                blocNote.FixBlocNote();
+                IsMoving = false;
+            }
+        }
     }
+            //Debug.Log(this.gameObject.ToString() + " " + this.GetComponent<Rigidbody>().linearVelocity + " / " + this.GetComponent<Rigidbody>().angularVelocity);
+
 
     public void CheckPicture()
     {
@@ -38,7 +61,7 @@ public class Page : MonoBehaviour
 
         if (picture.GetComponent<Photo>().animalInPicture == animalNeeded)
         {
-            //Debug.Log("good");
+            Debug.Log("good");
             picture.GetComponent<XRGrabInteractable>().interactionLayers = InteractionLayerMask.GetMask("Locked");
             GetComponent<AudioSource>().Play();
         }
@@ -55,6 +78,14 @@ public class Page : MonoBehaviour
         if (CheckSocket())
         {
             picture.transform.Find("Visual").gameObject.SetActive(display);
+            if (!display)
+            {
+                picture.GetComponent<XRGrabInteractable>().interactionLayers = InteractionLayerMask.GetMask("Locked");
+            }
+            else
+            {
+                picture.GetComponent<XRGrabInteractable>().interactionLayers = InteractionLayerMask.GetMask("InSocket");
+            }
         }
 
         if (pageNumber == 0)
@@ -74,13 +105,13 @@ public class Page : MonoBehaviour
         }
         else if (display & Vector3.Dot(Vector3.up, this.gameObject.transform.up) <= 0)
         {
-            //Debug.Log("photo + locked + insocket " + this.gameObject.name);
+            Debug.Log("photo + locked + insocket " + this.gameObject.name);
             pictureSocket.GetComponent<XRSocketInteractor>().interactionLayers =
                 InteractionLayerMask.GetMask("Photo", "Locked", "InSocket");
         }
         else
         {
-            //Debug.Log("locked + insocket " + this.gameObject.name);
+            Debug.Log("locked + insocket " + this.gameObject.name);
             pictureSocket.GetComponent<XRSocketInteractor>().interactionLayers =
                 InteractionLayerMask.GetMask("Locked", "InSocket");
         }
