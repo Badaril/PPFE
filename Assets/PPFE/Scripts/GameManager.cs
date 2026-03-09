@@ -33,12 +33,12 @@ public class GameManager : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            /*if (timer > 300f)
+            if (timer > 300f)
             {
                 EndGame();
                 timer = 0;
                 startTimer = false;
-            }*/
+            }
         }
     }
 
