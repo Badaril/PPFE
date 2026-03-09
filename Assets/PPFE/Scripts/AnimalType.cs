@@ -10,7 +10,8 @@ public enum TypeOfAnimal
     Horned_Owl,
     Deer,
     Bat,
-    Hedgehog
+    Hedgehog,
+    Fireflies
 }
 
 public class AnimalType : MonoBehaviour
