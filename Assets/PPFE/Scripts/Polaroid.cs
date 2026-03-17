@@ -115,7 +115,7 @@ public class Polaroid : MonoBehaviour
                 animaltype = listOfHitAnimals[0].collider.GetComponent<AnimalType>().type;
                 Debug.Log(animaltype.ToString());
             }
-            
+
             playQuickSound.Play();
             Photo newPhoto = CreatePhoto();
             newPhoto.polaroid = this;

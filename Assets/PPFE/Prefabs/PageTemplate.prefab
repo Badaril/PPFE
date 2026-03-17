@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 1252420755345285703}
   - component: {fileID: 1720363514678478087}
   - component: {fileID: 7710079261312389055}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,6 +570,54 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Page, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Page, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Page, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Page, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -836,7 +884,7 @@ GameObject:
   - component: {fileID: 2522520128793936258}
   - component: {fileID: 1309040558162584012}
   - component: {fileID: 1451601658258634259}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1256,7 +1304,7 @@ GameObject:
   - component: {fileID: 5299393975851049650}
   - component: {fileID: 4553982331052106306}
   - component: {fileID: 4830880593763971439}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1396,7 +1444,7 @@ GameObject:
   - component: {fileID: 7225894803103038229}
   - component: {fileID: 7686718332811951481}
   - component: {fileID: 6587345437808979757}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1545,7 +1593,7 @@ GameObject:
   - component: {fileID: 7760915790870899707}
   - component: {fileID: 6802829022535265016}
   - component: {fileID: 3669695170228198981}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1682,7 +1730,7 @@ GameObject:
   - component: {fileID: 2931583027888032900}
   - component: {fileID: 6663791470513078834}
   - component: {fileID: 1248402978315512294}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: TitleBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
