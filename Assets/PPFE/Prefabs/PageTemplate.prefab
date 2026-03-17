@@ -1866,7 +1866,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9164703489406267117}
   m_Layer: 6
-  m_Name: Attach
+  m_Name: HandAttach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
