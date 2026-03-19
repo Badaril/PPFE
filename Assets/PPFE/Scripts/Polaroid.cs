@@ -82,12 +82,12 @@ public class Polaroid : MonoBehaviour
 
     private void CreateRenderTexture()
     {
-        RenderTexture newTexture = new RenderTexture(256, 256, 32, RenderTextureFormat.Default, RenderTextureReadWrite.sRGB);
-        newTexture.antiAliasing = 4;
+        RenderTexture newTexture = new RenderTexture(512, 512, 32, RenderTextureFormat.Default, RenderTextureReadWrite.sRGB);
+        newTexture.antiAliasing = 8;
 
         renderCamera.targetTexture = newTexture;
         screenRenderer.material.mainTexture = newTexture;
-        bigScreenRenderer.material.mainTexture = newTexture;
+        //bigScreenRenderer.material.mainTexture = newTexture;
     }
 
     public void TakePhoto()
@@ -142,8 +142,8 @@ public class Polaroid : MonoBehaviour
         camera.Render();
         RenderTexture.active = camera.targetTexture;
 
-        Texture2D photo = new Texture2D(256, 256, TextureFormat.RGB24, false);
-        photo.ReadPixels(new Rect(0, 0, 256, 256), 0, 0);
+        Texture2D photo = new Texture2D(512, 512, TextureFormat.RGB24, false);
+        photo.ReadPixels(new Rect(0, 0, 512, 512), 0, 0);
         photo.Apply();
 
         return photo;
@@ -153,14 +153,14 @@ public class Polaroid : MonoBehaviour
     {
         renderCamera.enabled = true;
         screenRenderer.material.color = Color.white;
-        bigScreenRenderer.material.color = Color.white;
+        //bigScreenRenderer.material.color = Color.white;
     }
 
     public void TurnOff()
     {
         renderCamera.enabled = false;
         screenRenderer.material.color = Color.black;
-        bigScreenRenderer.material.color = Color.black;
+        //bigScreenRenderer.material.color = Color.black;
     }
 
     public void Zoom()
