@@ -9250,7 +9250,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: 0.006000042, y: 0.055599988, z: -0.026069999}
-  m_LocalScale: {x: 0.012553386, y: 0.0040000007, z: 0.0102549605}
+  m_LocalScale: {x: 0.01025496, y: 0.0040000007, z: 0.0102549605}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1421945916}
@@ -11580,7 +11580,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 8d668b89f16a7174b96ae3678034dad1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.8
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -16809,7 +16809,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 10
+  MinDistance: 30
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -17271,7 +17271,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 70
+  MinDistance: 100
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -19105,7 +19105,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
+  m_RenderPostProcessing: 0
   m_Antialiasing: 2
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -20802,6 +20802,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 638968782261208342, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.001
+      objectReference: {fileID: 0}
     - target: {fileID: 1174980907701142563, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -20811,16 +20815,28 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4068409443856991568, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068409443856991568, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068409443856991568, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068409443856991568, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.24021006
+      value: 0.313
       objectReference: {fileID: 0}
     - target: {fileID: 4068409443856991568, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.032
+      value: -0.045
       objectReference: {fileID: 0}
     - target: {fileID: 4068409443856991568, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.43729997
+      value: -0.376
       objectReference: {fileID: 0}
     - target: {fileID: 4068409443856991568, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
       propertyPath: m_LocalRotation.w
@@ -20962,10 +20978,6 @@ PrefabInstance:
       propertyPath: m_Parameters.textureMode
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8594188417960658098, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: d72545b3cb7736f4b916ae42dfad82dd, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
