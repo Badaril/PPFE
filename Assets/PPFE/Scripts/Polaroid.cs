@@ -22,6 +22,8 @@ public class Polaroid : MonoBehaviour
     public float minFOV = 1f;
     public float maxFOV = 60f;
     public float zoomSpeed = 30f;
+    public AudioSource zoomInSound;
+    public AudioSource zoomOutSound;
 
     private float currentFOV = 20f;
     private bool pictureAlreadyOut;
@@ -167,16 +169,48 @@ public class Polaroid : MonoBehaviour
     {
         if (rightHandDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 thumbstickValueRight))
         {
-            
             currentFOV -= thumbstickValueRight.y * zoomSpeed * Time.deltaTime;
             currentFOV = Mathf.Clamp(currentFOV, minFOV, maxFOV);
             renderCamera.fieldOfView = currentFOV;
+
+            if (thumbstickValueRight.y > 0)
+            {
+                zoomInSound.enabled = true;
+                zoomInSound.volume = thumbstickValueRight.y / 10f;
+            }
+            else if (thumbstickValueRight.y < 0)
+            {
+                zoomOutSound.enabled = true;
+                zoomOutSound.volume = thumbstickValueRight.y / -10f;
+            }
+            else
+            {
+                zoomInSound.enabled = false;
+                zoomOutSound.enabled = false;
+            }                    
+
         }
         if (leftHandDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 thumbstickValueLeft))
         {
             currentFOV -= thumbstickValueLeft.y * zoomSpeed * Time.deltaTime;
             currentFOV = Mathf.Clamp(currentFOV, minFOV, maxFOV);
             renderCamera.fieldOfView = currentFOV;
+
+            if (thumbstickValueLeft.y > 0)
+            {
+                zoomInSound.enabled = true;
+                zoomInSound.volume = thumbstickValueLeft.y / 10f;
+            }
+            else if (thumbstickValueLeft.y < 0)
+            {
+                zoomOutSound.enabled = true;
+                zoomOutSound.volume = thumbstickValueLeft.y / -10f;
+            }
+            else
+            {
+                zoomInSound.enabled = false;
+                zoomOutSound.enabled = false;
+            }
         }
     }
 
