@@ -167,6 +167,7 @@ public class Polaroid : MonoBehaviour
     {
         if (rightHandDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 thumbstickValueRight))
         {
+            
             currentFOV -= thumbstickValueRight.y * zoomSpeed * Time.deltaTime;
             currentFOV = Mathf.Clamp(currentFOV, minFOV, maxFOV);
             renderCamera.fieldOfView = currentFOV;
