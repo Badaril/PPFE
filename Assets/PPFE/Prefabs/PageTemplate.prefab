@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 1252420755345285703}
   - component: {fileID: 1720363514678478087}
   - component: {fileID: 7710079261312389055}
-  m_Layer: 2
+  m_Layer: 31
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1593,7 +1593,7 @@ GameObject:
   - component: {fileID: 7760915790870899707}
   - component: {fileID: 6802829022535265016}
   - component: {fileID: 3669695170228198981}
-  m_Layer: 2
+  m_Layer: 31
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1641,7 +1641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
