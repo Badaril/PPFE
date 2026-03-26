@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -12,10 +13,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject RedButton;
     [SerializeField] private GameObject SphereRoom;
     [SerializeField] private GameObject RestOfRoom;
+    [SerializeField] private HUDTextDatas TutoHUDTextDatas;
+    [SerializeField] private TMP_Text TextTuto;
 
     public float timer;
     public bool startTimer;
     private Color sphereColor;
+    private TextRow currentTutoRow;
+    private int currentTutoRowIndex;
 
     private void Start()
     {
@@ -24,7 +29,8 @@ public class GameManager : MonoBehaviour
         Animals.SetActive(false);
         Accessories.SetActive(false);
         sphereColor = SphereRoom.GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
-
+        currentTutoRow = TutoHUDTextDatas.textRow[currentTutoRowIndex];
+        UpdateTutoText();
     }
 
     private void Update()
@@ -52,6 +58,7 @@ public class GameManager : MonoBehaviour
 
         RedButton.SetActive(false);
         RestOfRoom.SetActive(false);
+        TextTuto.text = "";
 
         StartCoroutine(OpenTransition(4f));
     }
@@ -126,5 +133,19 @@ public class GameManager : MonoBehaviour
         sphereColor.a = 1;
         SphereRoom.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", sphereColor);
         SceneManager.LoadScene("Default_Scene");
+    }
+
+    public void UpdateTutoText()
+    {
+        if (!currentTutoRow.IsFinished)
+        {
+            TextTuto.text = currentTutoRow.text;
+            currentTutoRowIndex = currentTutoRow.nextRowIndex;
+            currentTutoRow = TutoHUDTextDatas.textRow[currentTutoRowIndex];
+        }
+        else
+        {
+            TextTuto.text = currentTutoRow.text;
+        }
     }
 }

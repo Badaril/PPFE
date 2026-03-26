@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 640d6c9f4a94f5040b03192faa9f3a7b, type: 3}
+  m_Name: TutoData
+  m_EditorClassIdentifier: Assembly-CSharp::HUDTextDatas
+  textRow:
+  - index: 0
+    text: Bonjour. Appuyez sur le bouton pour continuer.
+    nextRowIndex: 1
+    conditionEnabled: 0
+    IsFinished: 0
+  - index: 1
+    text: "Bienvenue dans cette exp\xE9rience VR : Naturali."
+    nextRowIndex: 2
+    conditionEnabled: 0
+    IsFinished: 0
+  - index: 2
+    text: Vous incarnez un naturaliste qui doit remplir son carnet d'observation
+      en collant les photos d'animaux qu'il prend.
+    nextRowIndex: 3
+    conditionEnabled: 0
+    IsFinished: 0
+  - index: 3
+    text: "Pour commencer, pour prendre les objets, pointez vers l'objet et appuyez
+      sur la gachette int\xE9rieure."
+    nextRowIndex: 4
+    conditionEnabled: 0
+    IsFinished: 0
+  - index: 4
+    text: "Super, maintenant, poussez/tirez le joystick pour zoomer/d\xE9zoomer"
+    nextRowIndex: 5
+    conditionEnabled: 0
+    IsFinished: 0
+  - index: 5
+    text: "Pour prendre la photo, vous pouvez appuyer sur les touches ou sur la gachette
+      ext\xE9rieure."
+    nextRowIndex: 6
+    conditionEnabled: 0
+    IsFinished: 0
+  - index: 6
+    text: "Enfin, pour coller la photo, prenez la en main et l\xE2cher la en appuyant
+      de nouveau sur la gachette int\xE9rieur "
+    nextRowIndex: 7
+    conditionEnabled: 0
+    IsFinished: 0
+  - index: 7
+    text: "Parfait, vous avez les bases. Pressez le bouton pour commencer l'exp\xE9rience"
+    nextRowIndex: -1
+    conditionEnabled: 0
+    IsFinished: 1
