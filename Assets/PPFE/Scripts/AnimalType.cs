@@ -11,7 +11,8 @@ public enum TypeOfAnimal
     Deer,
     Bat,
     Hedgehog,
-    Fireflies
+    Fireflies,
+    Snail
 }
 
 public class AnimalType : MonoBehaviour

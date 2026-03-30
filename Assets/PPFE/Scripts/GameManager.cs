@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("InGame assets")]
     [SerializeField] private GameObject Sounds;
     [SerializeField] private GameObject Polaroid;
     [SerializeField] private GameObject Animals;
@@ -13,8 +14,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject RedButton;
     [SerializeField] private GameObject SphereRoom;
     [SerializeField] private GameObject RestOfRoom;
+
+    [Header("Tuto assets")]
     [SerializeField] private HUDTextDatas TutoHUDTextDatas;
     [SerializeField] private TMP_Text TextTuto;
+    [SerializeField] private GameObject CanvaRef;
+    [SerializeField] private GameObject TutoBat;
+    [SerializeField] private GameObject TutoSnail;
+    [SerializeField] private GameObject TutoCamera;
+    [SerializeField] private GameObject TutoBlocNote;
+    [SerializeField] private GameObject TutoWalkieTalkie;
 
     public float timer;
     public bool startTimer;
@@ -56,15 +65,28 @@ public class GameManager : MonoBehaviour
         Animals.SetActive(true);
         Accessories.SetActive(true);
 
+        // a test
+        SphereRoom.GetComponent<MeshRenderer>().material.SetFloat("_Surface", 1);
+        SphereRoom.GetComponent<MeshRenderer>().material.SetOverrideTag("RenderType", "Transparent");
+        SphereRoom.GetComponent<MeshRenderer>().material.renderQueue =
+            (int)UnityEngine.Rendering.RenderQueue.Transparent;
+
         RedButton.SetActive(false);
         RestOfRoom.SetActive(false);
-        TextTuto.text = "";
+        CanvaRef.SetActive(false);
+
 
         StartCoroutine(OpenTransition(4f));
     }
 
     public void EndGame()
     {
+        // a test
+        SphereRoom.GetComponent<MeshRenderer>().material.SetFloat("_Surface", 0);
+        SphereRoom.GetComponent<MeshRenderer>().material.SetOverrideTag("RenderType", "Opaque");
+        SphereRoom.GetComponent<MeshRenderer>().material.renderQueue =
+            (int)UnityEngine.Rendering.RenderQueue.Geometry;
+
         StartCoroutine(CloseTransition(4f));
         
     }
@@ -87,7 +109,7 @@ public class GameManager : MonoBehaviour
             SphereRoom.transform.localScale += new Vector3(1,1,1) * Time.deltaTime * 50f;
             if (elapsedTime > 3)
             {
-                sphereColor.a -= Time.deltaTime;
+                sphereColor.a -= 0.1f * Time.deltaTime;
                 SphereRoom.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", sphereColor);
             }
             Sounds.transform.GetChild(0).GetComponentInChildren<AudioSource>().volume += Time.deltaTime * 0.2f;
@@ -116,7 +138,7 @@ public class GameManager : MonoBehaviour
             SphereRoom.transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime * 50f;
             if (elapsedTime < 1)
             {
-                sphereColor.a += Time.deltaTime;
+                sphereColor.a += 0.1f * Time.deltaTime;
                 SphereRoom.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", sphereColor);
             }
             Sounds.transform.GetChild(0).GetComponentInChildren<AudioSource>().volume -= Time.deltaTime * 0.2f;
@@ -137,15 +159,37 @@ public class GameManager : MonoBehaviour
 
     public void UpdateTutoText()
     {
+
         if (!currentTutoRow.IsFinished)
         {
+            if (currentTutoRow.conditionEnabled) 
+            {
+                RedButton.SetActive(false);
+                TutoCamera.SetActive(true);
+                TutoBat.SetActive(true);
+                TutoBlocNote.SetActive(true);
+                TutoSnail.SetActive(true);
+                TutoWalkieTalkie.SetActive(true);
+            }
             TextTuto.text = currentTutoRow.text;
             currentTutoRowIndex = currentTutoRow.nextRowIndex;
             currentTutoRow = TutoHUDTextDatas.textRow[currentTutoRowIndex];
         }
         else
         {
+            StartGame();
             TextTuto.text = currentTutoRow.text;
+        }
+    }
+
+    public void CheckTutoState()
+    {
+        switch (currentTutoRowIndex)
+        {
+            case 3:
+                //play sound
+                UpdateTutoText();
+                break;
         }
     }
 }
