@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
                 startTimer = false;
             }
         }
+        Debug.Log(sphereColor.a);
     }
 
     public void StartGame()
@@ -65,12 +66,12 @@ public class GameManager : MonoBehaviour
         Animals.SetActive(true);
         Accessories.SetActive(true);
 
-        // a test
-        SphereRoom.GetComponent<MeshRenderer>().material.SetFloat("_Surface", 1);
+        // marche pas comme je le souhaite
+        /*SphereRoom.GetComponent<MeshRenderer>().material.SetFloat("_Surface", 1);
         SphereRoom.GetComponent<MeshRenderer>().material.SetOverrideTag("RenderType", "Transparent");
         SphereRoom.GetComponent<MeshRenderer>().material.renderQueue =
-            (int)UnityEngine.Rendering.RenderQueue.Transparent;
-
+            (int)UnityEngine.Rendering.RenderQueue.Transparent;*/
+        SphereRoom.GetComponent<MeshRenderer>().material.SetOverrideTag("RenderType", "Transparent");
         RedButton.SetActive(false);
         RestOfRoom.SetActive(false);
         CanvaRef.SetActive(false);
@@ -81,12 +82,13 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        // a test
-        SphereRoom.GetComponent<MeshRenderer>().material.SetFloat("_Surface", 0);
+        // marche pas comme je le souhaite
+        /*SphereRoom.GetComponent<MeshRenderer>().material.SetFloat("_Surface", 0);
         SphereRoom.GetComponent<MeshRenderer>().material.SetOverrideTag("RenderType", "Opaque");
         SphereRoom.GetComponent<MeshRenderer>().material.renderQueue =
-            (int)UnityEngine.Rendering.RenderQueue.Geometry;
+            (int)UnityEngine.Rendering.RenderQueue.Geometry;*/
 
+        SphereRoom.GetComponent<MeshRenderer>().material.SetOverrideTag("RenderType", "Opaque");
         StartCoroutine(CloseTransition(4f));
         
     }
@@ -107,9 +109,10 @@ public class GameManager : MonoBehaviour
         while (elapsedTime < seconds)
         {
             SphereRoom.transform.localScale += new Vector3(1,1,1) * Time.deltaTime * 50f;
-            if (elapsedTime > 3)
+            if (elapsedTime > 1)
             {
-                sphereColor.a -= 0.1f * Time.deltaTime;
+                sphereColor.a -= 0.5f * Time.deltaTime;
+                Mathf.Clamp(sphereColor.a, 0f, 1f);
                 SphereRoom.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", sphereColor);
             }
             Sounds.transform.GetChild(0).GetComponentInChildren<AudioSource>().volume += Time.deltaTime * 0.2f;
@@ -138,7 +141,8 @@ public class GameManager : MonoBehaviour
             SphereRoom.transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime * 50f;
             if (elapsedTime < 1)
             {
-                sphereColor.a += 0.1f * Time.deltaTime;
+                sphereColor.a += 0.5f * Time.deltaTime;
+                Mathf.Clamp(sphereColor.a, 0f, 1f);
                 SphereRoom.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", sphereColor);
             }
             Sounds.transform.GetChild(0).GetComponentInChildren<AudioSource>().volume -= Time.deltaTime * 0.2f;
