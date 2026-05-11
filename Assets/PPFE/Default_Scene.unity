@@ -935,6 +935,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 567995367}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &171597820 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2868057118058582601, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+  m_PrefabInstance: {fileID: 1712973421}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &171597824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171597820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a2ade43e04f2fd48a1008b92159b7de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutoChecker
+  gameManager: {fileID: 1669287755}
+  index: 8
 --- !u!1 &177488507
 GameObject:
   m_ObjectHideFlags: 0
@@ -2099,7 +2118,7 @@ Transform:
   m_GameObject: {fileID: 318572468}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 0.3426632, y: 0.38499996, z: -0.33000106}
+  m_LocalPosition: {x: 0.413, y: 0.38499996, z: -0.33000106}
   m_LocalScale: {x: 0.009999994, y: 0.019999998, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2321,8 +2340,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Petit mammif\xE8re nocturne au dos couvert de piquants, il fr\xE9quente
-    jardins, haies et lisi\xE8res de for\xEAts."
+  m_text: "Petit mammif\xE8re nocturne, elle chasse les insectes gr\xE2ce \xE0 l\u2019\xE9cholocation.
+    Elle se repose le jour dans des grottes et hiberne durant l\u2019hiver."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6726a731a4b0e5b4696cbf6dc10b09eb, type: 2}
   m_sharedMaterial: {fileID: -1062709589498365564, guid: 6726a731a4b0e5b4696cbf6dc10b09eb, type: 2}
@@ -6394,6 +6413,7 @@ GameObject:
   - component: {fileID: 546445372}
   - component: {fileID: 546445371}
   - component: {fileID: 546445370}
+  - component: {fileID: 546445373}
   m_Layer: 8
   m_Name: '--- Tuto Camera --- '
   m_TagString: Untagged
@@ -6522,13 +6542,27 @@ Transform:
   m_GameObject: {fileID: 546445369}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.77585006, y: 0.8204, z: 0.5538653}
+  m_LocalPosition: {x: 0.63, y: 0.8204, z: 0.014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1118234208}
   m_Father: {fileID: 1047059012}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &546445373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546445369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a2ade43e04f2fd48a1008b92159b7de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutoChecker
+  gameManager: {fileID: 1669287755}
+  index: 7
 --- !u!1001 &556117551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11079,6 +11113,94 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1669287755}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1669287755}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 948328130}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: EnabledRedButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: EnabledRedButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: UpdateTutoState
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: TutoChecker, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257987721394600956, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4068409443856991568, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2
@@ -11101,7 +11223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4068409443856991568, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.309
+      value: 0.173
       objectReference: {fileID: 0}
     - target: {fileID: 4068409443856991568, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11170,11 +11292,11 @@ PrefabInstance:
     - target: {fileID: 6122259696820457050, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
       propertyPath: 'animalList.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1560506695}
     - target: {fileID: 6122259696820457050, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
       propertyPath: 'animalList.Array.data[1]'
       value: 
-      objectReference: {fileID: 1560506695}
+      objectReference: {fileID: 0}
     - target: {fileID: 6122259696820457050, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
       propertyPath: 'animalList.Array.data[2]'
       value: 
@@ -11246,7 +11368,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4265497301821194088, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 948328130}
   m_SourcePrefab: {fileID: 100100000, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
 --- !u!4 &948328122 stripped
 Transform:
@@ -11269,6 +11394,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4265497301821194088, guid: c6f2d743f6ad3f2479e65bfe7171ef40, type: 3}
   m_PrefabInstance: {fileID: 948328121}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &948328130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948328124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a2ade43e04f2fd48a1008b92159b7de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutoChecker
+  gameManager: {fileID: 1669287755}
+  index: 4
 --- !u!1 &961691707
 GameObject:
   m_ObjectHideFlags: 0
@@ -11658,6 +11797,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bc9a7a0486854442807902ca6b5b290, type: 3}
+--- !u!1 &1018307980 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1716944865414351355, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+  m_PrefabInstance: {fileID: 1712973421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1030442750 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8e909bf37f75a6b478c3fe4b0634f6b4, type: 3}
@@ -12050,7 +12194,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.929, y: -0.356}
+  m_AnchoredPosition: {x: 0.972, y: -0.356}
   m_SizeDelta: {x: 0, y: -0.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1063416382
@@ -12073,7 +12217,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Zone de recherche : Rivi\xE8re"
+  m_text: "Zone de recherche : Plaine et clairi\xE8re"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6726a731a4b0e5b4696cbf6dc10b09eb, type: 2}
   m_sharedMaterial: {fileID: -1062709589498365564, guid: 6726a731a4b0e5b4696cbf6dc10b09eb, type: 2}
@@ -12487,7 +12631,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 18/18
+  m_text: 4/4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f4a43af7a45394240a4cda87cb8c6915, type: 2}
   m_sharedMaterial: {fileID: 1941099576983707744, guid: f4a43af7a45394240a4cda87cb8c6915, type: 2}
@@ -12711,6 +12855,7 @@ GameObject:
   - component: {fileID: 1118234211}
   - component: {fileID: 1118234210}
   - component: {fileID: 1118234209}
+  - component: {fileID: 1118234215}
   m_Layer: 8
   m_Name: CameraManager
   m_TagString: Untagged
@@ -13032,6 +13177,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 546445373}
+        m_TargetAssemblyTypeName: TutoChecker, Assembly-CSharp
+        m_MethodName: UpdateTutoState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
@@ -13122,6 +13279,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
+--- !u!114 &1118234215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118234207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a2ade43e04f2fd48a1008b92159b7de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutoChecker
+  gameManager: {fileID: 1669287755}
+  index: 6
 --- !u!1 &1138069795
 GameObject:
   m_ObjectHideFlags: 0
@@ -13398,7 +13569,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1192586681
 Transform:
   m_ObjectHideFlags: 0
@@ -13408,7 +13579,7 @@ Transform:
   m_GameObject: {fileID: 1192586680}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.72406006, y: 0.86835, z: 0.05886}
+  m_LocalPosition: {x: 0.815, y: 0.86835, z: -0.436}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15918,7 +16089,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1435534324
 Transform:
   m_ObjectHideFlags: 0
@@ -21863,7 +22034,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1/18
+  m_text: 1/4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f4a43af7a45394240a4cda87cb8c6915, type: 2}
   m_sharedMaterial: {fileID: 1941099576983707744, guid: f4a43af7a45394240a4cda87cb8c6915, type: 2}
@@ -21988,6 +22159,7 @@ GameObject:
   - component: {fileID: 1552875386}
   - component: {fileID: 1552875385}
   - component: {fileID: 1552875384}
+  - component: {fileID: 1552875387}
   m_Layer: 0
   m_Name: PictureSocket
   m_TagString: Untagged
@@ -22030,6 +22202,18 @@ MonoBehaviour:
       - m_Target: {fileID: 823146720}
         m_TargetAssemblyTypeName: Page, Assembly-CSharp
         m_MethodName: CheckPicture
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1552875387}
+        m_TargetAssemblyTypeName: TutoChecker, Assembly-CSharp
+        m_MethodName: UpdateTutoState
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22105,6 +22289,20 @@ Transform:
   - {fileID: 1777651974}
   m_Father: {fileID: 823146721}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1552875387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552875383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a2ade43e04f2fd48a1008b92159b7de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutoChecker
+  gameManager: {fileID: 1669287755}
+  index: 8
 --- !u!1001 &1560506693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24276,8 +24474,10 @@ MonoBehaviour:
   TutoCamera: {fileID: 546445369}
   TutoBlocNote: {fileID: 1706632191}
   TutoWalkieTalkie: {fileID: 948328124}
+  TutoRedButton: {fileID: 1435534323}
   timer: 0
   startTimer: 0
+  currentTutoRowIndex: 0
 --- !u!114 &1669287757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24577,6 +24777,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1706632193}
   - component: {fileID: 1706632192}
+  - component: {fileID: 1706632194}
   m_Layer: 0
   m_Name: --- Tuto NoteBook ---
   m_TagString: Untagged
@@ -24610,7 +24811,7 @@ Transform:
   m_GameObject: {fileID: 1706632191}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7580856, y: 0.8301972, z: 0.0312448}
+  m_LocalPosition: {x: 0.7580856, y: 0.8301972, z: 0.199}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24618,6 +24819,20 @@ Transform:
   - {fileID: 1712973423}
   m_Father: {fileID: 1047059012}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1706632194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706632191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a2ade43e04f2fd48a1008b92159b7de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutoChecker
+  gameManager: {fileID: 1669287755}
+  index: 9
 --- !u!1001 &1712973421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24632,7 +24847,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 660551064466693204, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_text
-      value: 2/18
+      value: 2/4
       objectReference: {fileID: 0}
     - target: {fileID: 738783050316952630, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24652,6 +24867,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 738783050316952630, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 738783050316952630, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 738783050316952630, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 738783050316952630, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
@@ -24720,15 +24943,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3669695170228198981, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_text
-      value: "Zone de recherche : Plaine et clairi\xE8re"
+      value: "Zone de recherche : Rivi\xE8re"
       objectReference: {fileID: 0}
     - target: {fileID: 4068850790473380643, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2107
+      value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: 4068850790473380643, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2921
+      value: 0.395
       objectReference: {fileID: 0}
     - target: {fileID: 4068850790473380643, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_LocalPosition.z
@@ -24764,7 +24987,7 @@ PrefabInstance:
       objectReference: {fileID: 139200558}
     - target: {fileID: 4830880593763971439, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_text
-      value: grand paon de nuit
+      value: escargot
       objectReference: {fileID: 0}
     - target: {fileID: 5226198154037178188, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_Enabled
@@ -24779,12 +25002,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5631205335328968123, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631205335328968123, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5631205335328968123, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5631205335328968123, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -24809,7 +25036,7 @@ PrefabInstance:
     - target: {fileID: 5631205335328968123, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 712900741}
+      objectReference: {fileID: 1712973431}
     - target: {fileID: 5631205335328968123, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -24827,12 +25054,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 364578162}
     - target: {fileID: 5631205335328968123, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631205335328968123, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UnsetPage
       objectReference: {fileID: 0}
     - target: {fileID: 5631205335328968123, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: set_hideControllerModel
+      value: UpdateTutoState
       objectReference: {fileID: 0}
     - target: {fileID: 5631205335328968123, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -24856,7 +25087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631205335328968123, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.XR.Interaction.Toolkit.ActionBasedController, Unity.XR.Interaction.Toolkit
+      value: TutoChecker, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5631205335328968123, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -24918,7 +25149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6864550686111398872, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_text
-      value: 3/18
+      value: 3/4
       objectReference: {fileID: 0}
     - target: {fileID: 7103123962145354847, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_IsActive
@@ -24934,18 +25165,45 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7710079261312389055, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_text
-      value: "Plus grand papillon de nuit d\u2019Europe, il impressionne par ses
-        larges ailes orn\xE9es d\u2019ocelles \xE9voquant des yeux. Il est attir\xE9
-        par la lumi\xE8re."
+      value: "Petit mollusque au corps mou prot\xE9g\xE9 par une coquille spiral\xE9e,
+        il fr\xE9quente jardins, for\xEAts humides et prairies."
       objectReference: {fileID: 0}
     - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 139200558}
+    - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1552875387}
+    - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpdateTutoState
+      objectReference: {fileID: 0}
+    - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TutoChecker, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8306610770443452579, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 8f7d7a29ff5b799409411545a75b8f0a, type: 2}
+      objectReference: {fileID: 2100000, guid: 32e9158daab62e543a2fb2f384defc60, type: 2}
     - target: {fileID: 8315683045986326705, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -24953,14 +25211,20 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1716944865414351355, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1712973431}
+    - targetCorrespondingSourceObject: {fileID: 2868057118058582601, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 171597824}
   m_SourcePrefab: {fileID: 100100000, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
 --- !u!114 &1712973422 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4187301327132575332, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
   m_PrefabInstance: {fileID: 1712973421}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1018307980}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f879c68b8fdec5469f9610a921ba688, type: 3}
@@ -24971,6 +25235,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 738783050316952630, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
   m_PrefabInstance: {fileID: 1712973421}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1712973431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018307980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a2ade43e04f2fd48a1008b92159b7de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutoChecker
+  gameManager: {fileID: 1669287755}
+  index: 9
 --- !u!1001 &1724149519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26012,7 +26290,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.016, y: 0.388}
+  m_AnchoredPosition: {x: -0.022, y: 0.388}
   m_SizeDelta: {x: 0, y: -0.90000004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1889241447
@@ -26035,7 +26313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Escargot
+  m_text: Chauve souris
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f4a43af7a45394240a4cda87cb8c6915, type: 2}
   m_sharedMaterial: {fileID: 1941099576983707744, guid: f4a43af7a45394240a4cda87cb8c6915, type: 2}
@@ -26719,7 +26997,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 32e9158daab62e543a2fb2f384defc60, type: 2}
+  - {fileID: 2100000, guid: 8f7d7a29ff5b799409411545a75b8f0a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -27566,7 +27844,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2114805458
 RectTransform:
   m_ObjectHideFlags: 0

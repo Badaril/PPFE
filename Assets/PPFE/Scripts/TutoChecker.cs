@@ -3,10 +3,15 @@ using UnityEngine;
 public class TutoChecker : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
+    
+    [SerializeField] private float index;
 
     public void UpdateTutoState()
     {
-            gameManager.CheckTutoState();
+        if (index == gameManager.currentTutoRowIndex)
+        {
+            gameManager.UpdateTutoText();
 
+        }
     }
 }

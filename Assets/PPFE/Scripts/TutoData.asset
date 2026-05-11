@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HUDTextDatas
   textRow:
   - index: 0
-    text: Bonjour. Appuyez sur le bouton pour continuer.
+    text: Bonjour. Appuyez sur le bouton rouge pour continuer.
     nextRowIndex: 1
     conditionEnabled: 0
     IsFinished: 0
   - index: 1
-    text: "Bienvenue dans cette exp\xE9rience VR : Naturali."
+    text: "Bienvenue dans cette exp\xE9rience VR : Naturalis. Appuyez sur le bouton
+      rouge pour continuer."
     nextRowIndex: 2
     conditionEnabled: 0
     IsFinished: 0
@@ -30,35 +31,51 @@ MonoBehaviour:
     conditionEnabled: 0
     IsFinished: 0
   - index: 3
-    text: "Pour commencer, pour prendre les objets, pointez vers l'objet et appuyez
-      sur la gachette int\xE9rieure. Ainsi, vous pouvez tourner des pages et \xE9couter
-      les animaux avec le talkie walkie"
+    text: "Pour commencer, vous pouvez attraper les objets autour de vous. Pour cela,
+      pointez votre laser vers l'objet et appuyez sur la gachette int\xE9rieure de
+      votre manette."
     nextRowIndex: 4
-    conditionEnabled: 1
+    conditionEnabled: 0
     IsFinished: 0
   - index: 4
-    text: "Super, maintenant, poussez/tirez le joystick pour zoomer/d\xE9zoomer"
+    text: "Super. Ici, le talkie-walkie permet de localiser les animaux gr\xE2ce
+      \xE0 leur son. Posez le talkie-walkie pour continuer."
     nextRowIndex: 5
     conditionEnabled: 0
     IsFinished: 0
   - index: 5
-    text: "Pour prendre la photo, vous pouvez appuyer sur les touches ou sur la gachette
-      ext\xE9rieure."
+    text: Maintenant, prenez l'appareil photo en main. Vous pouvez zoomer ou dezoomer
+      en poussant ou tirant le joystick de votre manette.
     nextRowIndex: 6
     conditionEnabled: 0
     IsFinished: 0
   - index: 6
-    text: "Enfin, pour coller la photo, prenez la en main et l\xE2cher la en appuyant
-      de nouveau sur la gachette int\xE9rieur "
+    text: "Super. Pour prendre une photo, appuyer sur les boutons ou sur la gachette
+      ext\xE9rieure de votre manette."
     nextRowIndex: 7
-    conditionEnabled: 0
+    conditionEnabled: 1
     IsFinished: 0
   - index: 7
-    text: "Parfait, vous avez les bases. Pressez le bouton pour commencer l'exp\xE9rience"
+    text: "Ensuite, vous pouvez coller la photo dans le carnet. Pour cela, prenez
+      la photo en main, puis l\xE2cher la en appuyant de nouveau sur la gachette
+      int\xE9rieur au dessus du cadre noir."
     nextRowIndex: 8
     conditionEnabled: 0
     IsFinished: 0
   - index: 8
+    text: "Enfin, prenez la page de droite, tournez la feuille vers la gauche et
+      l\xE2chez la."
+    nextRowIndex: 9
+    conditionEnabled: 0
+    IsFinished: 0
+  - index: 9
+    text: "Parfait, vous avez les bases. Vous pouvez vous entra\xEEner avec cet escargot.
+      Quand vous vous sentez pr\xEAt, appuyez sur le bouton rouge pour commencer
+      l'exp\xE9rience."
+    nextRowIndex: 10
+    conditionEnabled: 0
+    IsFinished: 0
+  - index: 10
     text: 
     nextRowIndex: -1
     conditionEnabled: 0

@@ -78,6 +78,12 @@ public class BlocNote : MonoBehaviour
             Debug.Log("inferieur à 0");
             pages[actualIndex].SetSocket(true);
 
+            if (this.GetComponent<TutoChecker>() != null)
+            {
+                
+                this.gameObject.GetComponent<TutoChecker>().UpdateTutoState();
+            }
+
             if (pages[actualIndex].previousPage == 0)
             {
                 pages[pages[actualIndex].previousPage].SetSocket(false);

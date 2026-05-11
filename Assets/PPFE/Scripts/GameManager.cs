@@ -24,12 +24,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject TutoCamera;
     [SerializeField] private GameObject TutoBlocNote;
     [SerializeField] private GameObject TutoWalkieTalkie;
+    [SerializeField] private GameObject TutoRedButton;
 
     public float timer;
     public bool startTimer;
     private Color sphereColor;
     private TextRow currentTutoRow;
-    private int currentTutoRowIndex;
+    public int currentTutoRowIndex;
 
     private void Start()
     {
@@ -48,18 +49,27 @@ public class GameManager : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            if (timer > 300f)
+            if (timer > 30f)
             {
                 EndGame();
                 timer = 0;
                 startTimer = false;
             }
         }
-        Debug.Log(sphereColor.a);
+        /*Debug.Log(currentTutoRowIndex + " index");
+        Debug.Log(currentTutoRow + " row");*/
+
     }
 
     public void StartGame()
     {
+        TutoCamera.SetActive(false);
+        TutoBat.SetActive(false);
+        TutoBlocNote.SetActive(false);
+        TutoSnail.SetActive(false);
+        TutoWalkieTalkie.SetActive(false);
+        TextTuto.text = currentTutoRow.text;
+
         Sounds.SetActive(true);
         StartCoroutine(ActivateProps());
         Polaroid.SetActive(true);
@@ -166,7 +176,9 @@ public class GameManager : MonoBehaviour
 
         if (!currentTutoRow.IsFinished)
         {
-            if (currentTutoRow.conditionEnabled) 
+
+            
+            /*if (currentTutoRow.conditionEnabled) 
             {
                 RedButton.SetActive(false);
                 TutoCamera.SetActive(true);
@@ -174,15 +186,52 @@ public class GameManager : MonoBehaviour
                 TutoBlocNote.SetActive(true);
                 TutoSnail.SetActive(true);
                 TutoWalkieTalkie.SetActive(true);
-            }
+            }*/
             TextTuto.text = currentTutoRow.text;
             currentTutoRowIndex = currentTutoRow.nextRowIndex;
             currentTutoRow = TutoHUDTextDatas.textRow[currentTutoRowIndex];
+
+            switch (currentTutoRowIndex)
+            {
+                case 4:
+                    TutoRedButton.gameObject.SetActive(false);
+                    TutoWalkieTalkie.SetActive(true);
+                break;
+
+                case 5:
+                    TutoBat.SetActive(true);
+                break;
+                
+                case 6:
+                    TutoRedButton.gameObject.SetActive(false);
+                    TutoWalkieTalkie.SetActive(false);
+                    //TutoBat.SetActive(false);
+                    TutoCamera.SetActive(true);
+                    TutoRedButton.gameObject.SetActive(false);
+                    break;
+
+                case 7:
+                    TutoBlocNote.gameObject.SetActive(true);
+                    break;
+
+                case 10:
+                    TutoBat.SetActive(false);
+                    TutoSnail.SetActive(true);
+                    RedButton.SetActive(true);
+                    break;
+            }
         }
         else
         {
-            StartGame();
+            
+
+            TutoCamera.SetActive(false);
+            TutoBat.SetActive(false);
+            TutoBlocNote.SetActive(false);
+            TutoSnail.SetActive(false);
+            TutoWalkieTalkie.SetActive(false);
             TextTuto.text = currentTutoRow.text;
+            StartGame();
         }
     }
 
@@ -195,5 +244,10 @@ public class GameManager : MonoBehaviour
                 UpdateTutoText();
                 break;
         }
+    }
+
+    public void EnabledRedButton(bool value)
+    {
+        TutoRedButton.gameObject.SetActive(value);
     }
 }
