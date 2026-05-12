@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject RedButton;
     [SerializeField] private GameObject SphereRoom;
     [SerializeField] private GameObject RestOfRoom;
+    [SerializeField] private GameDataManager GameDataManager;
+    private GameData GameDatas;
+
+    [SerializeField] private XRRayInteractor LeftController;
+    [SerializeField] private XRRayInteractor RightController;
+    /*[SerializeField]*/ private bool ControllersToggleOn;
 
     [Header("Tuto assets")]
     [SerializeField] private HUDTextDatas TutoHUDTextDatas;
@@ -46,7 +53,10 @@ public class GameManager : MonoBehaviour
         Polaroid.SetActive(false);
         Animals.SetActive(false);
         Accessories.SetActive(false);
-        
+
+        /*GameDatas = GameDataManager.LoadGameData("gameSaveFile.txt");
+        ChangeControllersToggle(GameDatas.controllersToggleOn);*/
+
         sphereColor = SphereRoom.GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
         currentTutoRow = TutoHUDTextDatas.textRow[currentTutoRowIndex];
         UpdateTutoText();
@@ -58,7 +68,7 @@ public class GameManager : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            if (timer > 30f)
+            if (timer > 300f)
             {
                 EndGame();
                 timer = 0;
@@ -72,7 +82,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        //TutoCamera.GetComponentsInChildren<Polaroid>().gameObject..enabled = false;
+        TutoCamera.gameObject.transform.GetChild(0).GetComponent<XRGrabInteractable>().enabled = false;
         TutoCamera.SetActive(false);
         TutoBat.SetActive(false);
         TutoBlocNote.SetActive(false);
@@ -285,5 +295,20 @@ public class GameManager : MonoBehaviour
     public void EnabledRedButton(bool value)
     {
         TutoRedButton.gameObject.SetActive(value);
+    }
+
+    public void ChangeControllersToggle(bool value)
+    {
+        if (value)
+        {
+            LeftController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.Toggle;
+            RightController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.Toggle;
+        }
+        else
+        {
+            LeftController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.State;
+            RightController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.State;
+        }
+        GameDataManager.SaveGameData(GameDatas, "gameSaveFile.txt");
     }
 }

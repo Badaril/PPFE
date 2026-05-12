@@ -6,7 +6,7 @@ public struct TextRow
     public int index;
     public string text;
     public int nextRowIndex;
-    public bool conditionEnabled;
+    //public bool conditionEnabled;
     public bool IsFinished;
 }
 
