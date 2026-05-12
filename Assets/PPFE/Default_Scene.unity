@@ -13816,7 +13816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1164048275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23038,7 +23038,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 145c1c9dde0fbe74596e5f33b7267d85, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -24548,7 +24548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayQuickSound
   sound: {fileID: 8300000, guid: 8afc72f6958c04c4b803baa34c758957, type: 3}
-  volume: 1
+  volume: 0.5
   randomPitchVariance: 0
 --- !u!82 &1636451668
 AudioSource:
@@ -25071,7 +25071,7 @@ MonoBehaviour:
   VideosCanvas: {fileID: 1164048274}
   VideoPlayerControls: {fileID: 225157534}
   VideoPlayerExample: {fileID: 531792061}
-  ValidationSound: {fileID: 0}
+  ValidationSound: {fileID: 1636451667}
   ListOfVideoClips:
   - {fileID: 32900000, guid: 210a6d828d433d245a13885c4394deba, type: 3}
   - {fileID: 32900000, guid: a5f993a26c72a72419307ef2840ce039, type: 3}

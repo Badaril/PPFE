@@ -176,20 +176,20 @@ public class Polaroid : MonoBehaviour
 
             if (thumbstickValueRight.y > 0)
             {
-                if (this.GetComponent<TutoChecker>() != null)
+                /*if (this.GetComponent<TutoChecker>() != null)
                 {
                     
                     this.gameObject.GetComponent<TutoChecker>().UpdateTutoState();
-                }
+                }*/
                 zoomInSound.enabled = true;
                 zoomInSound.volume = thumbstickValueRight.y / 10f;
             }
             else if (thumbstickValueRight.y < 0)
             {
-                if (this.GetComponent<TutoChecker>() != null)
-                {
+                /*if (this.GetComponent<TutoChecker>() != null)
+                {*/
                     this.gameObject.GetComponent<TutoChecker>().UpdateTutoState();
-                }
+                //}
                 zoomOutSound.enabled = true;
                 zoomOutSound.volume = thumbstickValueRight.y / -10f;
             }
@@ -208,19 +208,19 @@ public class Polaroid : MonoBehaviour
 
             if (thumbstickValueLeft.y > 0)
             {
-                if (this.GetComponent<TutoChecker>() != null)
+                /*if (this.GetComponent<TutoChecker>() != null)
                 {
                     this.gameObject.GetComponent<TutoChecker>().UpdateTutoState();
-                }
+                }*/
                 zoomInSound.enabled = true;
                 zoomInSound.volume = thumbstickValueLeft.y / 10f;
             }
             else if (thumbstickValueLeft.y < 0)
             {
-                if (this.GetComponent<TutoChecker>() != null)
-                {
+                /*if (this.GetComponent<TutoChecker>() != null)
+                {*/
                     this.gameObject.GetComponent<TutoChecker>().UpdateTutoState();
-                }
+                //}
                 zoomOutSound.enabled = true;
                 zoomOutSound.volume = thumbstickValueLeft.y / -10f;
             }

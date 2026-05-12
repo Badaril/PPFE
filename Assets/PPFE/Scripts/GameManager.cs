@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
         Polaroid.SetActive(false);
         Animals.SetActive(false);
         Accessories.SetActive(false);
+        
         sphereColor = SphereRoom.GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
         currentTutoRow = TutoHUDTextDatas.textRow[currentTutoRowIndex];
         UpdateTutoText();
@@ -71,6 +72,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        //TutoCamera.GetComponentsInChildren<Polaroid>().gameObject..enabled = false;
         TutoCamera.SetActive(false);
         TutoBat.SetActive(false);
         TutoBlocNote.SetActive(false);
@@ -201,7 +203,8 @@ public class GameManager : MonoBehaviour
 
             switch (currentTutoRowIndex)
             {
-                case 4:      
+                case 4:
+                    VideosCanvas.SetActive(true);
                     TutoRedButton.gameObject.SetActive(false);
                     TutoWalkieTalkie.SetActive(true);
                     VideoPlayerControls.clip = ListOfVideoClips[0];
@@ -244,6 +247,7 @@ public class GameManager : MonoBehaviour
                     break;
 
                 case 10:
+                    ValidationSound.Play();
                     TutoBat.SetActive(false);
                     TutoSnail.SetActive(true);
                     RedButton.SetActive(true);
@@ -257,13 +261,13 @@ public class GameManager : MonoBehaviour
         {
             
             
-            TutoCamera.SetActive(false);
+            /*TutoCamera.SetActive(false);
             TutoBat.SetActive(false);
             TutoBlocNote.SetActive(false);
             TutoSnail.SetActive(false);
             TutoWalkieTalkie.SetActive(false);
             TextTuto.text = currentTutoRow.text;
-            StartGame();
+            StartGame();*/
         }
     }
 
