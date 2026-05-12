@@ -19,8 +19,8 @@ MonoBehaviour:
     conditionEnabled: 0
     IsFinished: 0
   - index: 1
-    text: "Bienvenue dans cette exp\xE9rience VR : Naturalis. Appuyez sur le bouton
-      rouge pour continuer."
+    text: "Bienvenue dans cette exp\xE9rience VR : Naturalis. Ce bouton rouge vous
+      aidera \xE0 avancer dans le tutoriel."
     nextRowIndex: 2
     conditionEnabled: 0
     IsFinished: 0
@@ -39,7 +39,8 @@ MonoBehaviour:
     IsFinished: 0
   - index: 4
     text: "Super. Ici, le talkie-walkie permet de localiser les animaux gr\xE2ce
-      \xE0 leur son. Posez le talkie-walkie pour continuer."
+      \xE0 leur son. Posez le talkie-walkie en appuyant de nouveau sur le m\xEAme
+      bouton pour continuer."
     nextRowIndex: 5
     conditionEnabled: 0
     IsFinished: 0
