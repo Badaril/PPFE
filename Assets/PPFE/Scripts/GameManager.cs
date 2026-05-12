@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class GameManager : MonoBehaviour
@@ -25,6 +26,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject TutoBlocNote;
     [SerializeField] private GameObject TutoWalkieTalkie;
     [SerializeField] private GameObject TutoRedButton;
+    [SerializeField] private GameObject VideosCanvas;
+    [SerializeField] private VideoPlayer VideoPlayerControls;
+    [SerializeField] private VideoPlayer VideoPlayerExample;
+    [SerializeField] private PlayQuickSound ValidationSound;
+    [SerializeField] private VideoClip[] ListOfVideoClips;
+    
+
 
     public float timer;
     public bool startTimer;
@@ -193,38 +201,62 @@ public class GameManager : MonoBehaviour
 
             switch (currentTutoRowIndex)
             {
-                case 4:
+                case 4:      
                     TutoRedButton.gameObject.SetActive(false);
                     TutoWalkieTalkie.SetActive(true);
-                break;
+                    VideoPlayerControls.clip = ListOfVideoClips[0];
+                    VideoPlayerExample.clip = ListOfVideoClips[1];
+                    break;
 
                 case 5:
+                    ValidationSound.Play();
                     TutoBat.SetActive(true);
                 break;
                 
                 case 6:
+                    
                     TutoRedButton.gameObject.SetActive(false);
                     TutoWalkieTalkie.SetActive(false);
                     //TutoBat.SetActive(false);
                     TutoCamera.SetActive(true);
                     TutoRedButton.gameObject.SetActive(false);
+                    VideoPlayerControls.clip = ListOfVideoClips[2];
+                    VideoPlayerExample.clip = ListOfVideoClips[3];
                     break;
 
                 case 7:
+                    ValidationSound.Play();
                     TutoBlocNote.gameObject.SetActive(true);
+                    VideoPlayerControls.clip = ListOfVideoClips[4];
+                    VideoPlayerExample.clip = ListOfVideoClips[5];
+                    break;
+
+                case 8:
+                    ValidationSound.Play();
+                    VideoPlayerControls.clip = ListOfVideoClips[0];
+                    VideoPlayerExample.clip = ListOfVideoClips[6];
+                    break;
+
+                case 9:
+                    ValidationSound.Play();
+                    VideoPlayerControls.clip = ListOfVideoClips[0];
+                    VideoPlayerExample.clip = ListOfVideoClips[7];
                     break;
 
                 case 10:
                     TutoBat.SetActive(false);
                     TutoSnail.SetActive(true);
                     RedButton.SetActive(true);
+                    VideoPlayerControls.clip = null;
+                    VideoPlayerExample.clip = null;
+                    VideosCanvas.SetActive(false);
                     break;
             }
         }
         else
         {
             
-
+            
             TutoCamera.SetActive(false);
             TutoBat.SetActive(false);
             TutoBlocNote.SetActive(false);

@@ -39,8 +39,8 @@ MonoBehaviour:
     IsFinished: 0
   - index: 4
     text: "Super. Ici, le talkie-walkie permet de localiser les animaux gr\xE2ce
-      \xE0 leur son. Posez le talkie-walkie en appuyant de nouveau sur le m\xEAme
-      bouton pour continuer."
+      \xE0 leur son. Posez le talkie-walkie en appuyant de nouveau sur la m\xEAme
+      gachette  pour continuer."
     nextRowIndex: 5
     conditionEnabled: 0
     IsFinished: 0
