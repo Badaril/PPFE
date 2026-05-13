@@ -25675,7 +25675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutoChecker
   gameManager: {fileID: 1669287755}
-  index: 8
+  index: 11
 --- !u!1001 &1560506693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28561,7 +28561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutoChecker
   gameManager: {fileID: 1669287755}
-  index: 11
+  index: 12
 --- !u!1 &1710554321
 GameObject:
   m_ObjectHideFlags: 0
@@ -29040,7 +29040,7 @@ PrefabInstance:
       objectReference: {fileID: 139200558}
     - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -30871,18 +30871,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1669287755}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: UpdateTutoText
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

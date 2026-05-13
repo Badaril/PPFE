@@ -59,9 +59,9 @@ public class GameManager : MonoBehaviour
         GameDatas = ScriptableObject.CreateInstance<GameData>();
         GameDataManager = new GameDataManager();
         GameDatas = GameDataManager.LoadGameData("gameSaveFile.txt");
-        ChangeControllersToggle(GameDatas.controllersToggleOn);
+        ChangeControllersToggle(GameDatas.controllersToggleOff);
 
-        ToggleButton.LateStart(GameDatas.controllersToggleOn, this);
+        ToggleButton.LateStart(GameDatas.controllersToggleOff, this);
         SkipTutoButton.LateStart(GameDatas.skipTutorial, this);
 
         sphereColor = SphereRoom.GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
@@ -280,14 +280,17 @@ public class GameManager : MonoBehaviour
                     break;
 
                 case 13:
+                    ValidationSound.Play();
                     VideoPlayerControls.clip = null;
                     VideoPlayerExample.clip = null;
                     VideosCanvas.SetActive(false);
                     TutoBat.SetActive(false);
                     TutoRedButton.SetActive(true);
+                    TutoBlocNote.SetActive(false);
                     break;
 
                 case 14:
+                    TutoBlocNote.SetActive(true);
                     TutoSnail.SetActive(true);
                     RedButton.SetActive(true);
                     TutoRedButton.SetActive(false);
@@ -331,13 +334,13 @@ public class GameManager : MonoBehaviour
     {
         if (value)
         {
-            LeftController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.Toggle;
-            RightController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.Toggle;
+            LeftController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.State;
+            RightController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.State;
         }
         else
         {
-            LeftController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.State;
-            RightController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.State;
+            LeftController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.Toggle;
+            RightController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.Toggle;
         }
         
     }

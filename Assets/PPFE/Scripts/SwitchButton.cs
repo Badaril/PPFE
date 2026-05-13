@@ -42,8 +42,8 @@ public class SwitchButton : MonoBehaviour, IPointerClickHandler
 
     public void ToggleSwitch()
     {
-        GameManager.GameDatas.controllersToggleOn = isOn;
-        GameManager.ChangeControllersToggle(GameManager.GameDatas.controllersToggleOn);
+        GameManager.GameDatas.controllersToggleOff = isOn;
+        GameManager.ChangeControllersToggle(GameManager.GameDatas.controllersToggleOff);
     }
 
     public void SkipTutoSwitch()
