@@ -20,11 +20,19 @@ public class SwitchButton : MonoBehaviour, IPointerClickHandler
         onPos = offPos + new Vector2 (handle.rect.width, 0); // Ajustez selon la taille du bouton
     }
 
+    private void Awake()
+    {
+        Debug.Log("je suis reveille");
+        UpdateSwitch();
+
+    }
+
     public void LateStart(bool value, GameManager gameManager)
     {
+        
         isOn = value;
         GameManager = gameManager;
-        UpdateSwitch();
+        Debug.LogError(GameManager);
     }
 
     public void OnPointerClick(PointerEventData eventData)

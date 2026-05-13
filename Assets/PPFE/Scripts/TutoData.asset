@@ -14,18 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HUDTextDatas
   textRow:
   - index: 0
-    text: "Bienvenue dans cette exp\xE9rience VR : Naturalis."
+    text: "Ce bouton rouge vous aidera \xE0 avancer dans le tutoriel. Appuyez dessus
+      avec votre manette pour continuer."
     nextRowIndex: 1
     conditionEnabled: 0
     IsFinished: 0
   - index: 1
-    text: "Ce bouton rouge vous aidera \xE0 avancer dans le tutoriel."
+    text: "Bienvenue dans cette exp\xE9rience VR dans laquelle vous incarnez un naturaliste."
     nextRowIndex: 2
     conditionEnabled: 0
     IsFinished: 0
   - index: 2
-    text: Vous incarnez un naturaliste et vous devez remplir votre carnet d'observation
-      en collant des photos d'animaux que vous trouverez.
+    text: Votre objectif est de remplir votre carnet d'observation en collant des
+      photos d'animaux.
     nextRowIndex: 3
     conditionEnabled: 0
     IsFinished: 0
@@ -59,7 +60,7 @@ MonoBehaviour:
     IsFinished: 0
   - index: 8
     text: "En tirant ou en poussant sur le joystick, vous pouvez zoomer ou d\xE9zoomer
-      avec l'appareil photo en main."
+      avec l'appareil photo."
     nextRowIndex: 9
     conditionEnabled: 0
     IsFinished: 0
@@ -82,17 +83,13 @@ MonoBehaviour:
     conditionEnabled: 0
     IsFinished: 0
   - index: 12
-    text: Parfait, vous avez les bases.
+    text: "Parfait, vous avez les bases. Vous pouvez vous entra\xEEner avec cet escargot.
+      Quand vous vous sentez pr\xEAt, appuyez sur le bouton rouge pour commencer
+      l'exp\xE9rience."
     nextRowIndex: 13
     conditionEnabled: 0
     IsFinished: 0
   - index: 13
-    text: "Vous pouvez vous entra\xEEner avec cet escargot. Quand vous vous sentez
-      pr\xEAt, appuyez sur le bouton rouge pour commencer l'exp\xE9rience."
-    nextRowIndex: 14
-    conditionEnabled: 0
-    IsFinished: 0
-  - index: 14
     text: 
     nextRowIndex: -1
     conditionEnabled: 0

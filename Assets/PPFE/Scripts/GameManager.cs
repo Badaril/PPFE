@@ -56,11 +56,12 @@ public class GameManager : MonoBehaviour
         Animals.SetActive(false);
         Accessories.SetActive(false);
 
-        GameDatas = ScriptableObject.CreateInstance<GameData>();
+        //GameDatas = ScriptableObject.CreateInstance<GameData>();
         GameDataManager = new GameDataManager();
         GameDatas = GameDataManager.LoadGameData("gameSaveFile.txt");
         ChangeControllersToggle(GameDatas.controllersToggleOff);
 
+        
         ToggleButton.LateStart(GameDatas.controllersToggleOff, this);
         SkipTutoButton.LateStart(GameDatas.skipTutorial, this);
 
@@ -285,16 +286,17 @@ public class GameManager : MonoBehaviour
                     VideoPlayerExample.clip = null;
                     VideosCanvas.SetActive(false);
                     TutoBat.SetActive(false);
-                    TutoRedButton.SetActive(true);
-                    TutoBlocNote.SetActive(false);
-                    break;
-
-                case 14:
-                    TutoBlocNote.SetActive(true);
                     TutoSnail.SetActive(true);
                     RedButton.SetActive(true);
                     TutoRedButton.SetActive(false);
                     break;
+
+                /*case 14:
+                    TutoBlocNote.SetActive(true);
+                    TutoSnail.SetActive(true);
+                    RedButton.SetActive(true);
+                    TutoRedButton.SetActive(false);
+                    break;*/
             }
         }
         else

@@ -1,1 +1,1 @@
-{"controllersToggleOn":false,"skipTutorial":false}
+{"controllersToggleOff":false,"skipTutorial":false}
