@@ -14,69 +14,85 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HUDTextDatas
   textRow:
   - index: 0
-    text: Bonjour. Appuyez sur le bouton rouge pour continuer.
+    text: "Bienvenue dans cette exp\xE9rience VR : Naturalis."
     nextRowIndex: 1
     conditionEnabled: 0
     IsFinished: 0
   - index: 1
-    text: "Bienvenue dans cette exp\xE9rience VR : Naturalis. Ce bouton rouge vous
-      aidera \xE0 avancer dans le tutoriel."
+    text: "Ce bouton rouge vous aidera \xE0 avancer dans le tutoriel."
     nextRowIndex: 2
     conditionEnabled: 0
     IsFinished: 0
   - index: 2
-    text: Vous incarnez un naturaliste qui doit remplir son carnet d'observation
-      en collant les photos d'animaux qu'il prend.
+    text: Vous incarnez un naturaliste et vous devez remplir votre carnet d'observation
+      en collant des photos d'animaux que vous trouverez.
     nextRowIndex: 3
     conditionEnabled: 0
     IsFinished: 0
   - index: 3
-    text: "Pour commencer, vous pouvez attraper les objets autour de vous. Pour cela,
-      pointez votre laser vers l'objet et appuyez sur la gachette int\xE9rieure de
-      votre manette."
+    text: Pour commencer, vous pouvez attraper les objets autour de vous.
     nextRowIndex: 4
     conditionEnabled: 0
     IsFinished: 0
   - index: 4
-    text: "Super. Ici, le talkie-walkie permet de localiser les animaux gr\xE2ce
-      \xE0 leur son. Posez le talkie-walkie en appuyant de nouveau sur la m\xEAme
-      gachette  pour continuer."
+    text: "Pour cela, pointez votre laser vers l'objet et appuyez sur la gachette
+      int\xE9rieure de votre manette."
     nextRowIndex: 5
-    conditionEnabled: 0
+    conditionEnabled: 1
     IsFinished: 0
   - index: 5
-    text: Maintenant, prenez l'appareil photo en main. Vous pouvez zoomer ou dezoomer
-      en poussant ou tirant le joystick de votre manette.
+    text: "Super. Ici, le talkie-walkie permet de localiser les animaux gr\xE2ce
+      \xE0 leur son."
     nextRowIndex: 6
     conditionEnabled: 0
     IsFinished: 0
   - index: 6
-    text: "Super. Pour prendre une photo, appuyer sur les boutons ou sur la gachette
-      ext\xE9rieure de votre manette."
+    text: "Vous pouvez \xE9galement poser les objets en appuyant de nouveau sur la
+      m\xEAme gachette."
     nextRowIndex: 7
     conditionEnabled: 1
     IsFinished: 0
   - index: 7
-    text: "Ensuite, vous pouvez coller la photo dans le carnet. Pour cela, prenez
-      la photo en main, puis l\xE2cher la en appuyant de nouveau sur la gachette
-      int\xE9rieur au dessus du cadre noir."
+    text: Maintenant, prenez l'appareil photo en main.
     nextRowIndex: 8
     conditionEnabled: 0
     IsFinished: 0
   - index: 8
-    text: "Enfin, prenez la page de droite, tournez la feuille vers la gauche et
-      l\xE2chez la."
+    text: "En tirant ou en poussant sur le joystick, vous pouvez zoomer ou d\xE9zoomer
+      avec l'appareil photo en main."
     nextRowIndex: 9
     conditionEnabled: 0
     IsFinished: 0
   - index: 9
-    text: "Parfait, vous avez les bases. Vous pouvez vous entra\xEEner avec cet escargot.
-      Quand vous vous sentez pr\xEAt, appuyez sur le bouton rouge pour commencer
-      l'exp\xE9rience."
+    text: "Super. Pour prendre une photo, appuyez sur les boutons ou sur la gachette
+      ext\xE9rieure de votre manette."
     nextRowIndex: 10
     conditionEnabled: 0
     IsFinished: 0
   - index: 10
+    text: "Ensuite, vous pouvez coller la photo dans le carnet. Pour cela, prenez
+      la photo en main, puis posez la sur le carr\xE9 noir."
+    nextRowIndex: 11
+    conditionEnabled: 0
+    IsFinished: 0
+  - index: 11
+    text: "Enfin, attrapez la page de droite, tournez la feuille vers la gauche et
+      l\xE2chez la."
+    nextRowIndex: 12
+    conditionEnabled: 0
+    IsFinished: 0
+  - index: 12
+    text: Parfait, vous avez les bases.
+    nextRowIndex: 13
+    conditionEnabled: 0
+    IsFinished: 0
+  - index: 13
+    text: "Vous pouvez vous entra\xEEner avec cet escargot. Quand vous vous sentez
+      pr\xEAt, appuyez sur le bouton rouge pour commencer l'exp\xE9rience."
+    nextRowIndex: 14
+    conditionEnabled: 0
+    IsFinished: 0
+  - index: 14
     text: 
     nextRowIndex: -1
     conditionEnabled: 0

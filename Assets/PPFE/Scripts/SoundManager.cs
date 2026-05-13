@@ -92,7 +92,6 @@ public class SoundManager : MonoBehaviour
     {
         startPosition = this.gameObject.transform.position;
         startRotation = this.gameObject.transform.rotation;
-        
     }
 
     public void ResetPostion()

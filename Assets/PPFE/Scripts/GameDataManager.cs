@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.IO;
 
-
+[System.Serializable]
 public class GameDataManager
 {
     public bool SaveGameData(GameData gameData, string filename)

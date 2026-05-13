@@ -82,8 +82,8 @@ public class GameManager : MonoBehaviour
                 startTimer = false;
             }
         }
-        /*Debug.Log(currentTutoRowIndex + " index");
-        Debug.Log(currentTutoRow + " row");*/
+        Debug.Log(currentTutoRowIndex + " index");
+        //Debug.Log(currentTutoRow + " row");
 
     }
 
@@ -208,9 +208,9 @@ public class GameManager : MonoBehaviour
             StartGame();
         }
 
-        else if (!currentTutoRow.IsFinished)
+        if (!currentTutoRow.IsFinished)
         {
-
+            Debug.LogWarning("je suis apellerknje");
             
             /*if (currentTutoRow.conditionEnabled) 
             {
@@ -227,7 +227,7 @@ public class GameManager : MonoBehaviour
 
             switch (currentTutoRowIndex)
             {
-                case 4:
+                case 5:
                     VideosCanvas.SetActive(true);
                     TutoRedButton.gameObject.SetActive(false);
                     TutoWalkieTalkie.SetActive(true);
@@ -235,49 +235,62 @@ public class GameManager : MonoBehaviour
                     VideoPlayerExample.clip = ListOfVideoClips[1];
                     break;
 
-                case 5:
+                case 6:
                     ValidationSound.Play();
                     TutoBat.SetActive(true);
+                    TutoRedButton.SetActive(true);
                 break;
+
+                case 7:
+                    TutoRedButton.SetActive(false);
+                    break;
                 
-                case 6:
-                    
+                case 8:
+                    VideosCanvas.SetActive(false);
                     TutoRedButton.gameObject.SetActive(false);
                     TutoWalkieTalkie.SetActive(false);
                     //TutoBat.SetActive(false);
                     TutoCamera.SetActive(true);
-                    TutoRedButton.gameObject.SetActive(false);
+                    break;
+
+                case 9:
+                    ValidationSound.Play();
+                    VideosCanvas.SetActive(true);
                     VideoPlayerControls.clip = ListOfVideoClips[2];
                     VideoPlayerExample.clip = ListOfVideoClips[3];
                     break;
 
-                case 7:
+                case 10:
                     ValidationSound.Play();
                     TutoBlocNote.gameObject.SetActive(true);
                     VideoPlayerControls.clip = ListOfVideoClips[4];
                     VideoPlayerExample.clip = ListOfVideoClips[5];
                     break;
 
-                case 8:
+                case 11:
                     ValidationSound.Play();
                     VideoPlayerControls.clip = ListOfVideoClips[0];
                     VideoPlayerExample.clip = ListOfVideoClips[6];
                     break;
 
-                case 9:
+                case 12:
                     ValidationSound.Play();
                     VideoPlayerControls.clip = ListOfVideoClips[0];
                     VideoPlayerExample.clip = ListOfVideoClips[7];
                     break;
 
-                case 10:
-                    ValidationSound.Play();
-                    TutoBat.SetActive(false);
-                    TutoSnail.SetActive(true);
-                    RedButton.SetActive(true);
+                case 13:
                     VideoPlayerControls.clip = null;
                     VideoPlayerExample.clip = null;
                     VideosCanvas.SetActive(false);
+                    TutoBat.SetActive(false);
+                    TutoRedButton.SetActive(true);
+                    break;
+
+                case 14:
+                    TutoSnail.SetActive(true);
+                    RedButton.SetActive(true);
+                    TutoRedButton.SetActive(false);
                     break;
             }
         }
@@ -308,7 +321,10 @@ public class GameManager : MonoBehaviour
 
     public void EnabledRedButton(bool value)
     {
-        TutoRedButton.gameObject.SetActive(value);
+        if (currentTutoRowIndex == 7)
+        {
+            TutoRedButton.gameObject.SetActive(value);
+        }
     }
 
     public void ChangeControllersToggle(bool value)
