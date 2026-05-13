@@ -16,12 +16,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject RedButton;
     [SerializeField] private GameObject SphereRoom;
     [SerializeField] private GameObject RestOfRoom;
-    [SerializeField] private GameDataManager GameDataManager;
-    private GameData GameDatas;
 
     [SerializeField] private XRRayInteractor LeftController;
     [SerializeField] private XRRayInteractor RightController;
-    /*[SerializeField]*/ private bool ControllersToggleOn;
+
+    [SerializeField] private SwitchButton ToggleButton;
+    [SerializeField] private SwitchButton SkipTutoButton;
+    
 
     [Header("Tuto assets")]
     [SerializeField] private HUDTextDatas TutoHUDTextDatas;
@@ -38,9 +39,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private VideoPlayer VideoPlayerExample;
     [SerializeField] private PlayQuickSound ValidationSound;
     [SerializeField] private VideoClip[] ListOfVideoClips;
-    
 
 
+    private GameDataManager GameDataManager;
+    public GameData GameDatas;
     public float timer;
     public bool startTimer;
     private Color sphereColor;
@@ -54,8 +56,13 @@ public class GameManager : MonoBehaviour
         Animals.SetActive(false);
         Accessories.SetActive(false);
 
-        /*GameDatas = GameDataManager.LoadGameData("gameSaveFile.txt");
-        ChangeControllersToggle(GameDatas.controllersToggleOn);*/
+        GameDatas = ScriptableObject.CreateInstance<GameData>();
+        GameDataManager = new GameDataManager();
+        GameDatas = GameDataManager.LoadGameData("gameSaveFile.txt");
+        ChangeControllersToggle(GameDatas.controllersToggleOn);
+
+        ToggleButton.LateStart(GameDatas.controllersToggleOn, this);
+        SkipTutoButton.LateStart(GameDatas.skipTutorial, this);
 
         sphereColor = SphereRoom.GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
         currentTutoRow = TutoHUDTextDatas.textRow[currentTutoRowIndex];
@@ -82,7 +89,10 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        TutoCamera.gameObject.transform.GetChild(0).GetComponent<XRGrabInteractable>().enabled = false;
+        GameDataManager.SaveGameData(GameDatas, "gameSaveFile.txt");
+
+        //TutoCamera.gameObject.transform.GetChild(0).GetComponent<XRGrabInteractable>().enabled = false;
+        TutoRedButton.SetActive(false);
         TutoCamera.SetActive(false);
         TutoBat.SetActive(false);
         TutoBlocNote.SetActive(false);
@@ -193,8 +203,12 @@ public class GameManager : MonoBehaviour
 
     public void UpdateTutoText()
     {
+        if (GameDatas.skipTutorial)
+        {
+            StartGame();
+        }
 
-        if (!currentTutoRow.IsFinished)
+        else if (!currentTutoRow.IsFinished)
         {
 
             
@@ -281,7 +295,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void CheckTutoState()
+    /*public void CheckTutoState()
     {
         switch (currentTutoRowIndex)
         {
@@ -290,7 +304,7 @@ public class GameManager : MonoBehaviour
                 UpdateTutoText();
                 break;
         }
-    }
+    }*/
 
     public void EnabledRedButton(bool value)
     {
@@ -309,6 +323,12 @@ public class GameManager : MonoBehaviour
             LeftController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.State;
             RightController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.State;
         }
+        
+    }
+
+    public void QuitGame()
+    {
         GameDataManager.SaveGameData(GameDatas, "gameSaveFile.txt");
+        Application.Quit();
     }
 }

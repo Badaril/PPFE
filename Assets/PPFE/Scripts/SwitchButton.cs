@@ -8,13 +8,22 @@ public class SwitchButton : MonoBehaviour, IPointerClickHandler
     public Color onColor;
     public Color offColor;
     public Image background;
-    private bool isOn = true;
+
+    private GameManager GameManager;
+
+    private bool isOn;
     private Vector2 offPos, onPos;
 
     void Start()
     {
         offPos = handle.anchoredPosition;
         onPos = offPos + new Vector2 (handle.rect.width, 0); // Ajustez selon la taille du bouton
+    }
+
+    public void LateStart(bool value, GameManager gameManager)
+    {
+        isOn = value;
+        GameManager = gameManager;
         UpdateSwitch();
     }
 
@@ -28,6 +37,17 @@ public class SwitchButton : MonoBehaviour, IPointerClickHandler
     {
         handle.anchoredPosition = isOn ? onPos : offPos;
         background.color = isOn ? onColor : offColor;
-        //Debug.Log("Switch : " + (isOn ? "ON" : "OFF"));
+        Debug.Log("Switch : " + (isOn ? "ON" : "OFF"));
+    }
+
+    public void ToggleSwitch()
+    {
+        GameManager.GameDatas.controllersToggleOn = isOn;
+        GameManager.ChangeControllersToggle(GameManager.GameDatas.controllersToggleOn);
+    }
+
+    public void SkipTutoSwitch()
+    {
+        GameManager.GameDatas.skipTutorial = isOn;
     }
 }

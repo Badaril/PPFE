@@ -200,7 +200,7 @@ public class Polaroid : MonoBehaviour
             }                    
 
         }
-        else if (leftHandDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 thumbstickValueLeft))
+        if (leftHandDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 thumbstickValueLeft))
         {
             currentFOV -= thumbstickValueLeft.y * zoomSpeed * Time.deltaTime;
             currentFOV = Mathf.Clamp(currentFOV, minFOV, maxFOV);
@@ -224,7 +224,7 @@ public class Polaroid : MonoBehaviour
                 zoomOutSound.enabled = true;
                 zoomOutSound.volume = thumbstickValueLeft.y / -10f;
             }
-            else
+            else if (!(thumbstickValueRight.y != 0))
             {
                 zoomInSound.enabled = false;
                 zoomOutSound.enabled = false;
