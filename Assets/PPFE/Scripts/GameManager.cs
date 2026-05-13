@@ -59,10 +59,10 @@ public class GameManager : MonoBehaviour
         //GameDatas = ScriptableObject.CreateInstance<GameData>();
         GameDataManager = new GameDataManager();
         GameDatas = GameDataManager.LoadGameData("gameSaveFile.txt");
-        ChangeControllersToggle(GameDatas.controllersToggleOff);
+        ChangeControllersToggle(GameDatas.controllersToggle);
 
         
-        ToggleButton.LateStart(GameDatas.controllersToggleOff, this);
+        ToggleButton.LateStart(GameDatas.controllersToggle, this);
         SkipTutoButton.LateStart(GameDatas.skipTutorial, this);
 
         sphereColor = SphereRoom.GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
@@ -336,13 +336,13 @@ public class GameManager : MonoBehaviour
     {
         if (value)
         {
-            LeftController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.State;
-            RightController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.State;
+            LeftController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.Toggle;
+            RightController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.Toggle;
         }
         else
         {
-            LeftController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.Toggle;
-            RightController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.Toggle;
+            LeftController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.State;
+            RightController.selectActionTrigger = XRBaseInputInteractor.InputTriggerType.State;
         }
         
     }

@@ -20,7 +20,8 @@ public class GameDataManager
         if (File.Exists(path))
         {
             string data = File.ReadAllText(path);
-            gameData = JsonUtility.FromJson<GameData>(data);
+            //gameData = JsonUtility.FromJson<GameData>(data);
+            JsonUtility.FromJsonOverwrite(data, gameData);
         }
         else
         {
