@@ -70,12 +70,13 @@ public class GameManager : MonoBehaviour
 
         sphereColor = SphereRoomTranslucent.GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
         currentTutoRow = TutoHUDTextDatas.textRow[currentTutoRowIndex];
-        UpdateTutoText();
+        //UpdateTutoText();
     }
 
     private void Update()
     {
-        Debug.Log(currentTutoRowIndex + " index");
+
+        Debug.Log(GameDatas.skipTutorial);
         //Debug.Log(currentTutoRow + " row");
     }
 
@@ -130,11 +131,12 @@ public class GameManager : MonoBehaviour
         while (elapsedTime < seconds)
         {
             SphereRoomTranslucent.transform.localScale += new Vector3(1,1,1) * Time.deltaTime * 50f;
-
+            if (elapsedTime > 1)
+            {
                 sphereColor.a -= 0.5f * Time.deltaTime;
                 Mathf.Clamp(sphereColor.a, 0f, 1f);
                 SphereRoomTranslucent.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", sphereColor);
-
+            }
             Sounds.transform.GetChild(0).GetComponentInChildren<AudioSource>().volume += Time.deltaTime * 0.2f;
             Mathf.Clamp(Sounds.transform.GetChild(0).GetComponentInChildren<AudioSource>().volume, 0, 1f);
             Sounds.transform.GetChild(1).GetComponentInChildren<AudioSource>().volume += Time.deltaTime * 0.2f;
@@ -159,12 +161,11 @@ public class GameManager : MonoBehaviour
         while (elapsedTime < seconds)
         {
             SphereRoomTranslucent.transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime * 50f;
-            if (elapsedTime < 1)
-            {
+
                 sphereColor.a += 0.5f * Time.deltaTime;
                 Mathf.Clamp(sphereColor.a, 0f, 1f);
                 SphereRoomTranslucent.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", sphereColor);
-            }
+
             Sounds.transform.GetChild(0).GetComponentInChildren<AudioSource>().volume -= Time.deltaTime * 0.2f;
             Mathf.Clamp(Sounds.transform.GetChild(0).GetComponentInChildren<AudioSource>().volume, 0, 1f);
             Sounds.transform.GetChild(1).GetComponentInChildren<AudioSource>().volume -= Time.deltaTime * 0.2f;

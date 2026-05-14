@@ -18,13 +18,12 @@ public class SwitchButton : MonoBehaviour, IPointerClickHandler
     {
         offPos = handle.anchoredPosition;
         onPos = offPos + new Vector2 (handle.rect.width, 0); // Ajustez selon la taille du bouton
+        UpdateSwitch();
     }
 
     private void Awake()
     {
-        Debug.Log("je suis reveille");
         UpdateSwitch();
-
     }
 
     public void LateStart(bool value, GameManager gameManager)
@@ -32,7 +31,7 @@ public class SwitchButton : MonoBehaviour, IPointerClickHandler
         
         isOn = value;
         GameManager = gameManager;
-        Debug.LogError(GameManager);
+
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -50,12 +49,12 @@ public class SwitchButton : MonoBehaviour, IPointerClickHandler
 
     public void ToggleSwitch()
     {
-        GameManager.GameDatas.controllersToggle = isOn;
+        GameManager.GameDatas.controllersToggle = !isOn;
         GameManager.ChangeControllersToggle(GameManager.GameDatas.controllersToggle);
     }
 
     public void SkipTutoSwitch()
     {
-        GameManager.GameDatas.skipTutorial = isOn;
+        GameManager.GameDatas.skipTutorial = !isOn;
     }
 }

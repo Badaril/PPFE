@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class DigitalTimer : MonoBehaviour
 {
-    private float timer = 60f;
+    private float timer = 300f;
     private bool startTimer;
     [SerializeField] private TextMeshProUGUI timerDisplay;
     private GameManager gameManager;
