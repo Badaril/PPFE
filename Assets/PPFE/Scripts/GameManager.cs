@@ -172,7 +172,7 @@ public class GameManager : MonoBehaviour
         }
         sphereColor.a = 1;
         SphereRoomTranslucent.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", sphereColor);
-        TextTuto.text = "Bravo ! Vous avez recencé " + blocNote.CheckAllPictures().ToString() + " sur 9 animaux au total en "
+        TextTuto.text = "Bravo ! Vous avez recensé " + blocNote.CheckAllPictures().ToString() + " sur 9 animaux au total en "
             + DigitalTimer.GetTimeRemaning() + ".";
         Sounds.SetActive(false);
         Polaroid.SetActive(false);

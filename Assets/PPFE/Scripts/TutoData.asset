@@ -34,13 +34,13 @@ MonoBehaviour:
     nextRowIndexByCondition: -1
     IsFinished: 0
   - index: 3
-    text: Pour commencer, vous pouvez attraper les objets autour de vous.
+    text: Pour commencer, vous pouvez attraper les objets tout autour de vous.
     nextRowIndex: 4
     conditionEnabled: 1
     nextRowIndexByCondition: 14
     IsFinished: 0
   - index: 4
-    text: "Pour cela, pointez votre laser vers l'objet et appuyez sur la gachette
+    text: "Pour cela, pointez votre laser vers l'objet et appuyez sur la g\xE2chette
       int\xE9rieure de votre manette."
     nextRowIndex: 5
     conditionEnabled: 0
@@ -55,7 +55,7 @@ MonoBehaviour:
     IsFinished: 0
   - index: 6
     text: "Vous pouvez \xE9galement poser les objets en appuyant de nouveau sur la
-      m\xEAme gachette."
+      m\xEAme g\xE2chette."
     nextRowIndex: 7
     conditionEnabled: 0
     nextRowIndexByCondition: -1
@@ -74,7 +74,7 @@ MonoBehaviour:
     nextRowIndexByCondition: -1
     IsFinished: 0
   - index: 9
-    text: "Super. Pour prendre une photo, appuyez sur les boutons ou sur la gachette
+    text: "Super. Pour prendre une photo, appuyez sur les boutons ou sur la g\xE2chette
       ext\xE9rieure de votre manette."
     nextRowIndex: 10
     conditionEnabled: 0
@@ -82,14 +82,14 @@ MonoBehaviour:
     IsFinished: 0
   - index: 10
     text: "Ensuite, vous pouvez coller la photo dans le carnet. Pour cela, prenez
-      la photo en main, puis posez la sur le carr\xE9 noir."
+      la photo en main, puis posez-la sur le carr\xE9 noir."
     nextRowIndex: 11
     conditionEnabled: 0
     nextRowIndexByCondition: -1
     IsFinished: 0
   - index: 11
     text: "Enfin, attrapez la page de droite, tournez la feuille vers la gauche et
-      l\xE2chez la."
+      l\xE2chez-la."
     nextRowIndex: 12
     conditionEnabled: 0
     nextRowIndexByCondition: -1
@@ -110,13 +110,13 @@ MonoBehaviour:
     IsFinished: 1
   - index: 14
     text: "Pour cela, pointez votre laser vers l'objet et restez appuy\xE9 sur la
-      gachette int\xE9rieure de votre manette."
+      g\xE2chette int\xE9rieure de votre manette."
     nextRowIndex: 5
     conditionEnabled: 0
     nextRowIndexByCondition: -1
     IsFinished: 0
   - index: 15
-    text: "Vous pouvez \xE9galement poser les objets en l\xE2chant la m\xEAme gachette."
+    text: "Vous pouvez \xE9galement poser les objets en l\xE2chant la m\xEAme g\xE2chette."
     nextRowIndex: 7
     conditionEnabled: 0
     nextRowIndexByCondition: -1

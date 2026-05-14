@@ -20246,7 +20246,7 @@ PrefabInstance:
     - target: {fileID: 7710079261312389055, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_text
       value: "Mammif\xE8re au pelage roux et \xE0 la queue touffue, il occupe for\xEAts,
-        campagnes et m\xEAme villes."
+        campagnes, et m\xEAme villes."
       objectReference: {fileID: 0}
     - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_InteractionManager
@@ -21313,7 +21313,7 @@ PrefabInstance:
     - target: {fileID: 7710079261312389055, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_text
       value: "Petite chauve-souris reconnaissable \xE0 son appendice nasal en forme
-        de fer \xE0 cheval, elle vit pr\xE8s des prairies et se nourrit proche de
+        de fer-\xE0-cheval, elle vit pr\xE8s des prairies et se nourrit proche de
         cours d'eau."
       objectReference: {fileID: 0}
     - target: {fileID: 7981693978483188815, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
@@ -28908,6 +28908,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 599264649539403346, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 660551064466693204, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_text
       value: 6/18
@@ -29212,7 +29216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7710079261312389055, guid: 5dc6bf7907a84a0409c97f2203375054, type: 3}
       propertyPath: m_text
-      value: "Petits col\xE9opt\xE8res nocturnes capables de produire de la bioluminescence. 
+      value: "Petits col\xE9opt\xE8res nocturnes capables de produire de la bioluminescence.
         On les rencontre dans les prairies humides, les lisi\xE8res de for\xEAts
         et pr\xE8s des \xE9tangs."
       objectReference: {fileID: 0}
@@ -32326,7 +32330,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Chauve souris
+  m_text: Chauve-souris
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f4a43af7a45394240a4cda87cb8c6915, type: 2}
   m_sharedMaterial: {fileID: 1941099576983707744, guid: f4a43af7a45394240a4cda87cb8c6915, type: 2}
