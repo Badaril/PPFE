@@ -9,6 +9,7 @@ public class BlocNote : MonoBehaviour
 
     [SerializeField] private SoundManager talkieWalkie;
 
+
     private void Update()
     {
         //Debug.Log("actual index : " + actualIndex + " / " + Vector3.Dot(transform.up, pages[actualIndex].gameObject.transform.up));
@@ -206,5 +207,19 @@ public class BlocNote : MonoBehaviour
                 talkieWalkie.ChangeVolume();
             }
         }
+    }
+
+    public int CheckAllPictures()
+    {
+        int compteur = 0;
+        for (int i = 0; i < pages.Length; i++)
+        {
+            //pages[i].visual.SetActive(true);
+            if (pages[i].IsCompleted)
+            {
+                compteur++;
+            }
+        }
+        return compteur;
     }
 }

@@ -19,15 +19,16 @@ public class DigitalTimer : MonoBehaviour
         gameManager = gameManagerRef;
     }
 
-    public float StopTimer()
+    public void StopTimer()
     {
         startTimer = false;
-        return timer;
     }
 
-    public float GetTimer() 
-    {  
-        return timer;
+    public string GetTimeRemaning() 
+    {
+        int minutes = Mathf.FloorToInt((300f - timer) / 60);
+        int seconds = Mathf.FloorToInt((300f - timer) % 60);
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
     private void DisplayTimeOnTimer()

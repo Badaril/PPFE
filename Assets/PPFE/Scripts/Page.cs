@@ -20,6 +20,10 @@ public class Page : MonoBehaviour
 
     public bool IsMoving;
 
+    [SerializeField] private GameObject CheckIcon;
+
+    public bool IsCompleted = false;
+
     private void Update()
     {
         //Debug.Log(pictureSocket.GetComponent<XRSocketInteractor>().interactionLayers);
@@ -62,6 +66,9 @@ public class Page : MonoBehaviour
         if (picture.GetComponent<Photo>().animalInPicture == animalNeeded)
         {
             //Debug.Log("good");
+            CheckIcon.SetActive(true);
+            IsCompleted = true;
+            CheckBlocNoteState();
             picture.GetComponent<XRGrabInteractable>().interactionLayers = InteractionLayerMask.GetMask("Locked");
             GetComponent<AudioSource>().Play();
         }
@@ -126,6 +133,8 @@ public class Page : MonoBehaviour
             {
                 picture.GetComponent<XRGrabInteractable>().interactionLayers = InteractionLayerMask.GetMask("Photo");
                 picture = null;
+                CheckIcon.SetActive(false);
+                IsCompleted = false;
             }
         }
     }
@@ -133,5 +142,17 @@ public class Page : MonoBehaviour
     public void UpdateBlocnote()
     {
         blocNote.TurnPage(pageNumber);
+    }
+
+    public void CheckBlocNoteState()
+    {
+        for (int i = 0; i < blocNote.pages.Length; i++)
+        {
+            if (!blocNote.pages[i].IsCompleted)
+            {
+                return;
+            }
+        }
+        gameManager.EndGame();
     }
 }

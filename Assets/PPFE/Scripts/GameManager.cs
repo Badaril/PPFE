@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject SphereRoom;
     [SerializeField] private GameObject SphereRoomTranslucent;
     [SerializeField] private GameObject RestOfRoom;
+    [SerializeField] private BlocNote blocNote;
 
     [SerializeField] private XRRayInteractor LeftController;
     [SerializeField] private XRRayInteractor RightController;
@@ -103,6 +104,7 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
+        DigitalTimer.StopTimer();
         StartCoroutine(CloseTransition(4f));
     }
 
@@ -170,7 +172,19 @@ public class GameManager : MonoBehaviour
         }
         sphereColor.a = 1;
         SphereRoomTranslucent.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", sphereColor);
-        SceneManager.LoadScene("Default_Scene");
+        TextTuto.text = "Bravo ! Vous avez recencé " + blocNote.CheckAllPictures().ToString() + " sur 9 animaux au total en "
+            + DigitalTimer.GetTimeRemaning() + ".";
+        Sounds.SetActive(false);
+        Polaroid.SetActive(false);
+        Animals.SetActive(false);
+        Accessories.SetActive(false);
+        DigitalTimer.gameObject.SetActive(false);
+        SphereRoom.SetActive(true);
+        SphereRoomTranslucent.SetActive(false);
+        RestOfRoom.SetActive(true);
+        CanvaRef.SetActive(true);
+        CanvaRef.transform.GetChild(0).gameObject.SetActive(true);
+        
     }
 
     public void UpdateTutoText()
@@ -178,6 +192,7 @@ public class GameManager : MonoBehaviour
         if (GameDatas.skipTutorial)
         {
             StartGame();
+            return;
         }
 
         if (!currentTutoRow.IsFinished)
@@ -314,8 +329,8 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void testMarqueurs()
+    public void RestartLevel()
     {
-        Debug.Log("hgjygfyugdjygfjdsgjgsjgjfsh");
+        SceneManager.LoadScene("Default_Scene");
     }
 }
