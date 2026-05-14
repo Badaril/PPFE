@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject Accessories;
     [SerializeField] private GameObject RedButton;
     [SerializeField] private GameObject SphereRoom;
+    [SerializeField] private GameObject SphereRoomTranslucent;
     [SerializeField] private GameObject RestOfRoom;
 
     [SerializeField] private XRRayInteractor LeftController;
@@ -22,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private SwitchButton ToggleButton;
     [SerializeField] private SwitchButton SkipTutoButton;
+
+    [SerializeField] private DigitalTimer DigitalTimer;
     
 
     [Header("Tuto assets")]
@@ -65,27 +68,15 @@ public class GameManager : MonoBehaviour
         ToggleButton.LateStart(GameDatas.controllersToggle, this);
         SkipTutoButton.LateStart(GameDatas.skipTutorial, this);
 
-        sphereColor = SphereRoom.GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
+        sphereColor = SphereRoomTranslucent.GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
         currentTutoRow = TutoHUDTextDatas.textRow[currentTutoRowIndex];
         UpdateTutoText();
     }
 
     private void Update()
     {
-        if (startTimer)
-        {
-            timer += Time.deltaTime;
-
-            if (timer > 300f)
-            {
-                EndGame();
-                timer = 0;
-                startTimer = false;
-            }
-        }
         Debug.Log(currentTutoRowIndex + " index");
         //Debug.Log(currentTutoRow + " row");
-
     }
 
     public void StartGame()
@@ -106,13 +97,10 @@ public class GameManager : MonoBehaviour
         Polaroid.SetActive(true);
         Animals.SetActive(true);
         Accessories.SetActive(true);
+        DigitalTimer.gameObject.SetActive(true);
 
-        // marche pas comme je le souhaite
-        /*SphereRoom.GetComponent<MeshRenderer>().material.SetFloat("_Surface", 1);
-        SphereRoom.GetComponent<MeshRenderer>().material.SetOverrideTag("RenderType", "Transparent");
-        SphereRoom.GetComponent<MeshRenderer>().material.renderQueue =
-            (int)UnityEngine.Rendering.RenderQueue.Transparent;*/
-        SphereRoom.GetComponent<MeshRenderer>().material.SetOverrideTag("RenderType", "Transparent");
+        SphereRoom.SetActive(false);
+        SphereRoomTranslucent.SetActive(true);
         RedButton.SetActive(false);
         RestOfRoom.SetActive(false);
         CanvaRef.SetActive(false);
@@ -123,15 +111,7 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        // marche pas comme je le souhaite
-        /*SphereRoom.GetComponent<MeshRenderer>().material.SetFloat("_Surface", 0);
-        SphereRoom.GetComponent<MeshRenderer>().material.SetOverrideTag("RenderType", "Opaque");
-        SphereRoom.GetComponent<MeshRenderer>().material.renderQueue =
-            (int)UnityEngine.Rendering.RenderQueue.Geometry;*/
-
-        SphereRoom.GetComponent<MeshRenderer>().material.SetOverrideTag("RenderType", "Opaque");
         StartCoroutine(CloseTransition(4f));
-        
     }
 
     public IEnumerator ActivateProps()
@@ -149,13 +129,12 @@ public class GameManager : MonoBehaviour
         float elapsedTime = 0;
         while (elapsedTime < seconds)
         {
-            SphereRoom.transform.localScale += new Vector3(1,1,1) * Time.deltaTime * 50f;
-            if (elapsedTime > 1)
-            {
+            SphereRoomTranslucent.transform.localScale += new Vector3(1,1,1) * Time.deltaTime * 50f;
+
                 sphereColor.a -= 0.5f * Time.deltaTime;
                 Mathf.Clamp(sphereColor.a, 0f, 1f);
-                SphereRoom.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", sphereColor);
-            }
+                SphereRoomTranslucent.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", sphereColor);
+
             Sounds.transform.GetChild(0).GetComponentInChildren<AudioSource>().volume += Time.deltaTime * 0.2f;
             Mathf.Clamp(Sounds.transform.GetChild(0).GetComponentInChildren<AudioSource>().volume, 0, 1f);
             Sounds.transform.GetChild(1).GetComponentInChildren<AudioSource>().volume += Time.deltaTime * 0.2f;
@@ -168,23 +147,23 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
-        SphereRoom.SetActive(false);
+        SphereRoomTranslucent.SetActive(false);
         Sounds.transform.GetChild(2).GetComponentInChildren<AudioSource>().volume = 0.05f;
-        startTimer = true;
+        DigitalTimer.StartTimer(this);
     }
 
     public IEnumerator CloseTransition(float seconds)
     {
-        SphereRoom.SetActive(true);
+        SphereRoomTranslucent.SetActive(true);
         float elapsedTime = 0;
         while (elapsedTime < seconds)
         {
-            SphereRoom.transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime * 50f;
+            SphereRoomTranslucent.transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime * 50f;
             if (elapsedTime < 1)
             {
                 sphereColor.a += 0.5f * Time.deltaTime;
                 Mathf.Clamp(sphereColor.a, 0f, 1f);
-                SphereRoom.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", sphereColor);
+                SphereRoomTranslucent.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", sphereColor);
             }
             Sounds.transform.GetChild(0).GetComponentInChildren<AudioSource>().volume -= Time.deltaTime * 0.2f;
             Mathf.Clamp(Sounds.transform.GetChild(0).GetComponentInChildren<AudioSource>().volume, 0, 1f);
@@ -198,7 +177,7 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         sphereColor.a = 1;
-        SphereRoom.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", sphereColor);
+        SphereRoomTranslucent.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", sphereColor);
         SceneManager.LoadScene("Default_Scene");
     }
 
