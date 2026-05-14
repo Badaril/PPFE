@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject VideosCanvas;
     [SerializeField] private VideoPlayer VideoPlayerControls;
     [SerializeField] private VideoPlayer VideoPlayerExample;
+    [SerializeField] private VideoPlayer VideoPlayerMiddle;
     [SerializeField] private PlayQuickSound ValidationSound;
     [SerializeField] private VideoClip[] ListOfVideoClips;
 
@@ -59,7 +60,6 @@ public class GameManager : MonoBehaviour
         Animals.SetActive(false);
         Accessories.SetActive(false);
 
-        //GameDatas = ScriptableObject.CreateInstance<GameData>();
         GameDataManager = new GameDataManager();
         GameDatas = GameDataManager.LoadGameData("gameSaveFile.txt");
         ChangeControllersToggle(GameDatas.controllersToggle);
@@ -70,21 +70,12 @@ public class GameManager : MonoBehaviour
 
         sphereColor = SphereRoomTranslucent.GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
         currentTutoRow = TutoHUDTextDatas.textRow[currentTutoRowIndex];
-        //UpdateTutoText();
-    }
-
-    private void Update()
-    {
-
-        Debug.Log(GameDatas.skipTutorial);
-        //Debug.Log(currentTutoRow + " row");
     }
 
     public void StartGame()
     {
         GameDataManager.SaveGameData(GameDatas, "gameSaveFile.txt");
 
-        //TutoCamera.gameObject.transform.GetChild(0).GetComponent<XRGrabInteractable>().enabled = false;
         TutoRedButton.SetActive(false);
         TutoCamera.SetActive(false);
         TutoBat.SetActive(false);
@@ -191,23 +182,37 @@ public class GameManager : MonoBehaviour
 
         if (!currentTutoRow.IsFinished)
         {
-            Debug.LogWarning("je suis apellerknje");
-            
-            /*if (currentTutoRow.conditionEnabled) 
+            if (currentTutoRow.conditionEnabled && !GameDatas.controllersToggle)
             {
-                RedButton.SetActive(false);
-                TutoCamera.SetActive(true);
-                TutoBat.SetActive(true);
-                TutoBlocNote.SetActive(true);
-                TutoSnail.SetActive(true);
-                TutoWalkieTalkie.SetActive(true);
-            }*/
-            TextTuto.text = currentTutoRow.text;
-            currentTutoRowIndex = currentTutoRow.nextRowIndex;
-            currentTutoRow = TutoHUDTextDatas.textRow[currentTutoRowIndex];
+                TextTuto.text = currentTutoRow.text;
+                currentTutoRowIndex = currentTutoRow.nextRowIndexByCondition;
+                currentTutoRow = TutoHUDTextDatas.textRow[currentTutoRowIndex];
+            }
+            else
+            {
+                TextTuto.text = currentTutoRow.text;
+                currentTutoRowIndex = currentTutoRow.nextRowIndex;
+                currentTutoRow = TutoHUDTextDatas.textRow[currentTutoRowIndex];
+            }
 
             switch (currentTutoRowIndex)
             {
+                case 1:
+                    VideosCanvas.SetActive(true);
+                    VideosCanvas.transform.GetChild(0).gameObject.SetActive(false);
+                    VideosCanvas.transform.GetChild(1).gameObject.SetActive(false);
+                    VideosCanvas.transform.GetChild(2).gameObject.SetActive(true);
+                    VideoPlayerMiddle.clip = ListOfVideoClips[10];
+
+                    break;
+
+                case 2:
+                    VideosCanvas.transform.GetChild(0).gameObject.SetActive(true);
+                    VideosCanvas.transform.GetChild(1).gameObject.SetActive(true);
+                    VideosCanvas.transform.GetChild(2).gameObject.SetActive(false);
+                    VideosCanvas.SetActive(false);
+                    break;
+
                 case 5:
                     VideosCanvas.SetActive(true);
                     TutoRedButton.gameObject.SetActive(false);
@@ -231,7 +236,6 @@ public class GameManager : MonoBehaviour
                     VideoPlayerExample.clip = ListOfVideoClips[3];
                     TutoRedButton.gameObject.SetActive(false);
                     TutoWalkieTalkie.SetActive(false);
-                    //TutoBat.SetActive(false);
                     TutoCamera.SetActive(true);
                     break;
 
@@ -272,38 +276,14 @@ public class GameManager : MonoBehaviour
                     TutoRedButton.SetActive(false);
                     break;
 
-                /*case 14:
-                    TutoBlocNote.SetActive(true);
-                    TutoSnail.SetActive(true);
-                    RedButton.SetActive(true);
-                    TutoRedButton.SetActive(false);
-                    break;*/
+                case 15:
+                    ValidationSound.Play();
+                    TutoBat.SetActive(true);
+                    TutoRedButton.SetActive(true);
+                    break;
             }
         }
-        else
-        {
-            
-            
-            /*TutoCamera.SetActive(false);
-            TutoBat.SetActive(false);
-            TutoBlocNote.SetActive(false);
-            TutoSnail.SetActive(false);
-            TutoWalkieTalkie.SetActive(false);
-            TextTuto.text = currentTutoRow.text;
-            StartGame();*/
-        }
     }
-
-    /*public void CheckTutoState()
-    {
-        switch (currentTutoRowIndex)
-        {
-            case 3:
-                //play sound
-                UpdateTutoText();
-                break;
-        }
-    }*/
 
     public void EnabledRedButton(bool value)
     {
@@ -332,5 +312,10 @@ public class GameManager : MonoBehaviour
     {
         GameDataManager.SaveGameData(GameDatas, "gameSaveFile.txt");
         Application.Quit();
+    }
+
+    public void testMarqueurs()
+    {
+        Debug.Log("hgjygfyugdjygfjdsgjgsjgjfsh");
     }
 }

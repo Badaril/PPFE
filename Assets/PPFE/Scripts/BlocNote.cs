@@ -30,7 +30,7 @@ public class BlocNote : MonoBehaviour
         //turn right to left
         if (Vector3.Dot(transform.up, pages[actualIndex].gameObject.transform.up) >= 0.98f)
         {
-            Debug.Log("turn right to left");
+            //Debug.Log("turn right to left");
             pages[actualIndex].SetSocket(true);
             if (pages[actualIndex].nextPage != -1)
             {
@@ -49,7 +49,7 @@ public class BlocNote : MonoBehaviour
         //turn left to right
         else
         {
-            Debug.Log("tourne de gauche à droite");
+            //Debug.Log("tourne de gauche à droite");
             if (pages[actualIndex].previousPage == 0)
             {
                 pages[pages[actualIndex].previousPage].SetSocket(true);
@@ -75,7 +75,7 @@ public class BlocNote : MonoBehaviour
     {
         if (Vector3.Dot(transform.up, pages[actualIndex].gameObject.transform.up) <= 0)
         {
-            Debug.Log("inferieur à 0");
+            //Debug.Log("inferieur à 0");
             pages[actualIndex].SetSocket(true);
 
             if (this.GetComponent<TutoChecker>() != null)
@@ -103,7 +103,7 @@ public class BlocNote : MonoBehaviour
         }
         else
         {
-            Debug.Log("sup 0");
+            //Debug.Log("sup 0");
             pages[actualIndex].SetSocket(false);
             if (pages[actualIndex].nextPage != -1 & actualIndex != 0)
             {

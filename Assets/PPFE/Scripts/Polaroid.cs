@@ -115,7 +115,7 @@ public class Polaroid : MonoBehaviour
             if (listOfHitAnimals.Count >= listOfHit.Count / 2) 
             {
                 animaltype = listOfHitAnimals[0].collider.GetComponent<AnimalType>().type;
-                Debug.Log(animaltype.ToString());
+                //Debug.Log(animaltype.ToString());
             }
 
             playQuickSound.Play();

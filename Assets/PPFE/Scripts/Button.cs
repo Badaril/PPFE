@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -17,7 +16,7 @@ public class Button : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        Debug.Log("trigger stay");
+        //Debug.Log("trigger stay");
         if (pressed) return;
 
         // position du point de contact (approx)
@@ -41,17 +40,8 @@ public class Button : MonoBehaviour
 
     void OnCollisionStay(Collision c)
     {
-        Debug.Log("collision stay");
         var rb = GetComponent<Rigidbody>();
         if (rb.IsSleeping()) rb.WakeUp();
-    }
-
-    private void Update()
-    {
-        if (button.GetComponent<MeshCollider>())
-        {
-            Debug.Log("je ");
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -60,7 +50,7 @@ public class Button : MonoBehaviour
         if (other.CompareTag("Button") && !_deadTimeActive)
         {
             onPressed?.Invoke();
-            Debug.Log("I have been pressed");
+            //Debug.Log("I have been pressed");
         }
     }
 
@@ -69,7 +59,7 @@ public class Button : MonoBehaviour
         if (other.tag == "Button" && !_deadTimeActive)
         {
             onReleased?.Invoke();
-            Debug.Log("I have been released");
+            //Debug.Log("I have been released");
             StartCoroutine(WaitForDeadTime());
         }
     }

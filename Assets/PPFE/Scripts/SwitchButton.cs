@@ -44,7 +44,7 @@ public class SwitchButton : MonoBehaviour, IPointerClickHandler
     {
         handle.anchoredPosition = isOn ? onPos : offPos;
         background.color = isOn ? onColor : offColor;
-        Debug.Log("Switch : " + (isOn ? "ON" : "OFF"));
+        //Debug.Log("Switch : " + (isOn ? "ON" : "OFF"));
     }
 
     public void ToggleSwitch()

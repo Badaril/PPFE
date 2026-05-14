@@ -7,6 +7,7 @@ public struct TextRow
     public string text;
     public int nextRowIndex;
     public bool conditionEnabled;
+    public int nextRowIndexByCondition;
     public bool IsFinished;
 }
 
