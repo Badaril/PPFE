@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
         ChangeControllersToggle(GameDatas.controllersToggle);
 
         
-        ToggleButton.LateStart(GameDatas.controllersToggle, this);
+        ToggleButton.LateStart(!GameDatas.controllersToggle, this);
         SkipTutoButton.LateStart(GameDatas.skipTutorial, this);
 
         sphereColor = SphereRoomTranslucent.GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
@@ -223,11 +223,12 @@ public class GameManager : MonoBehaviour
                 break;
 
                 case 7:
+                    VideoPlayerExample.clip = ListOfVideoClips[2];
                     TutoRedButton.SetActive(false);
                     break;
                 
                 case 8:
-                    VideosCanvas.SetActive(false);
+                    VideoPlayerExample.clip = ListOfVideoClips[3];
                     TutoRedButton.gameObject.SetActive(false);
                     TutoWalkieTalkie.SetActive(false);
                     //TutoBat.SetActive(false);
@@ -237,27 +238,27 @@ public class GameManager : MonoBehaviour
                 case 9:
                     ValidationSound.Play();
                     VideosCanvas.SetActive(true);
-                    VideoPlayerControls.clip = ListOfVideoClips[2];
-                    VideoPlayerExample.clip = ListOfVideoClips[3];
+                    VideoPlayerControls.clip = ListOfVideoClips[4];
+                    VideoPlayerExample.clip = ListOfVideoClips[5];
                     break;
 
                 case 10:
                     ValidationSound.Play();
                     TutoBlocNote.gameObject.SetActive(true);
-                    VideoPlayerControls.clip = ListOfVideoClips[4];
-                    VideoPlayerExample.clip = ListOfVideoClips[5];
+                    VideoPlayerControls.clip = ListOfVideoClips[6];
+                    VideoPlayerExample.clip = ListOfVideoClips[7];
                     break;
 
                 case 11:
                     ValidationSound.Play();
                     VideoPlayerControls.clip = ListOfVideoClips[0];
-                    VideoPlayerExample.clip = ListOfVideoClips[6];
+                    VideoPlayerExample.clip = ListOfVideoClips[8];
                     break;
 
                 case 12:
                     ValidationSound.Play();
                     VideoPlayerControls.clip = ListOfVideoClips[0];
-                    VideoPlayerExample.clip = ListOfVideoClips[7];
+                    VideoPlayerExample.clip = ListOfVideoClips[9];
                     break;
 
                 case 13:

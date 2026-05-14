@@ -49,7 +49,7 @@ public class SwitchButton : MonoBehaviour, IPointerClickHandler
 
     public void ToggleSwitch()
     {
-        GameManager.GameDatas.controllersToggle = !isOn;
+        GameManager.GameDatas.controllersToggle = isOn;
         GameManager.ChangeControllersToggle(GameManager.GameDatas.controllersToggle);
     }
 
