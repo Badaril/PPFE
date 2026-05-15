@@ -173,7 +173,7 @@ public class GameManager : MonoBehaviour
         sphereColor.a = 1;
         SphereRoomTranslucent.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", sphereColor);
         TextTuto.text = "Bravo ! Vous avez recensé " + blocNote.CheckAllPictures().ToString() + " sur 9 animaux au total en "
-            + DigitalTimer.GetTimeRemaning() + ".";
+            + DigitalTimer.GetTimeRemaning();
         Sounds.SetActive(false);
         Polaroid.SetActive(false);
         Animals.SetActive(false);
@@ -238,11 +238,13 @@ public class GameManager : MonoBehaviour
 
                 case 6:
                     ValidationSound.Play();
+                    VideosCanvas.SetActive(false);
                     TutoBat.SetActive(true);
                     TutoRedButton.SetActive(true);
                 break;
 
                 case 7:
+                    VideosCanvas.SetActive(true);
                     VideoPlayerExample.clip = ListOfVideoClips[2];
                     TutoRedButton.SetActive(false);
                     break;
@@ -293,6 +295,7 @@ public class GameManager : MonoBehaviour
 
                 case 15:
                     ValidationSound.Play();
+                    VideosCanvas.SetActive(false);
                     TutoBat.SetActive(true);
                     TutoRedButton.SetActive(true);
                     break;
